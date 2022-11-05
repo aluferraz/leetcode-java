@@ -1,11 +1,18 @@
 
 
 
-import leetcode.editor.en.Q542.Zero1Matrix;
-import java.util.Arrays;
+import leetcode.editor.en.Q2034.StockPriceFluctuation;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Arrays.deepToString(Zero1Matrix.updateMatrix(new int[][]{{0, 0, 0}, {0, 1, 0}, {1, 1, 1}})));
+        StockPriceFluctuation st = new StockPriceFluctuation();
+        st.update(1, 10);
+        st.update(2, 5);
+        System.out.println(st.current());
+        System.out.println(st.maximum());
+        st.update(1, 3);
+        System.out.println(st.maximum());
+        st.update(4, 2);
+        System.out.println(st.minimum());
     }
 }
