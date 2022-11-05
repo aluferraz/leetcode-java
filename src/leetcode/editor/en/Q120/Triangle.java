@@ -1,4 +1,5 @@
 package leetcode.editor.en.Q120;
+
 import java.util.*;
 
 //Given a triangle array, return the minimum path sum from top to bottom. 
@@ -49,12 +50,34 @@ import java.util.*;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+    private HashMap<String, Integer> cache;
+
     public int minimumTotal(List<List<Integer>> triangle) {
-        
+        cache = new HashMap<>();
+        return minimumAtPath(0, 0, triangle);
     }
+
+    public int minimumAtPath(int i, int rowNumber, List<List<Integer>> triangle) {
+        String cacheKey = i + "-" + rowNumber;
+        if (this.cache.containsKey(cacheKey)) {
+            return this.cache.get(cacheKey);
+        }
+        if (rowNumber == triangle.size()) {
+            return 0;
+        }
+
+        List<Integer> row = triangle.get(rowNumber);
+        int currentVal = row.get(i);
+        int minimumAtLeft = minimumAtPath(i, rowNumber + 1, triangle);
+        int minimumAtRight = minimumAtPath(i + 1, rowNumber + 1, triangle);
+        int minimumResult = currentVal + Math.min(minimumAtLeft, minimumAtRight);
+        this.cache.put(cacheKey, minimumResult);
+        return minimumResult;
+    }
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
 
-
-public class Triangle extends Solution {}
+public class Triangle extends Solution {
+}
