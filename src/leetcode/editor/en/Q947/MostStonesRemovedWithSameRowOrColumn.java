@@ -66,9 +66,9 @@ class Solution {
     public int removeStones(int[][] stones) {
         HashMap<Integer, HashSet<Integer>> stonesRow = new HashMap<>();
         HashMap<Integer, HashSet<Integer>> stonesCol = new HashMap<>();
-        for (int[] ints : stones) {
-            int row = ints[0];
-            int col = ints[1];
+        for (int[] stone : stones) {
+            int row = stone[0];
+            int col = stone[1];
             HashSet<Integer> stonesOfRow = new HashSet<>();
             HashSet<Integer> stonesOfCol = new HashSet<>();
             if (stonesRow.containsKey(row)) {
@@ -83,11 +83,52 @@ class Solution {
             stonesCol.put(col, stonesOfCol);
         }
         int maxRemoved = 0;
-         stonesRow.keySet();
 
-
+        HashMap<String, HashSet<String>> stoneNeighbors = new HashMap<>();
+        for (int[] stone : stones) {
+            int row = stone[0];
+            int col = stone[1];
+            String stoneKey = String.valueOf(row) + ':' + col;
+            HashSet<String> neighbors = new HashSet<>();
+            for (int rowNeighbor : stonesRow.get(row)) {
+                if (rowNeighbor != col) {
+                    String newKey = String.valueOf(row) + ':' + rowNeighbor;
+                    neighbors.add(newKey);
+                }
+            }
+            for (int colNeighbor : stonesCol.get(col)) {
+                if (colNeighbor != row) {
+                    String newKey = String.valueOf(colNeighbor) + ':' + col;
+                    neighbors.add(newKey);
+                }
+            }
+            if (neighbors.size() > 0) stoneNeighbors.put(stoneKey, neighbors);
+        }
+        HashSet<String> removedStones = new HashSet<>();
+        for (int[] stone : stones) {
+            int row = stone[0];
+            int col = stone[1];
+            String stoneKey = String.valueOf(row) + ':' + col;
+            int removed = countRemoved(stoneKey, removedStones, stoneNeighbors);
+            if (removed > 0) removed--;
+            maxRemoved += removed;
+        }
 
         return maxRemoved;
+    }
+
+    private int countRemoved(String stoneKey, HashSet<String> removedStones, HashMap<String, HashSet<String>> stoneNeighbors) {
+        int removed = 0;
+        if (!stoneNeighbors.containsKey(stoneKey)) return removed;
+        removedStones.add(stoneKey);
+        boolean canRemove = false;
+        removed = 1;
+        for (String nextStone : stoneNeighbors.get(stoneKey)) {
+            if (removedStones.contains(nextStone)) continue;
+            removed += countRemoved(nextStone, removedStones, stoneNeighbors);
+        }
+
+        return removed; //Can be removed
     }
 
 }

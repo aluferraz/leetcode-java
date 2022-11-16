@@ -1,9 +1,11 @@
-import leetcode.editor.en.Q33.SearchInRotatedSortedArray;
-import leetcode.editor.en.Q34.FindFirstAndLastPositionOfElementInSortedArray;
-import leetcode.editor.en.Q715.RangeModule;
+import leetcode.editor.en.Q222.CountCompleteTreeNodes;
+import leetcode.editor.en.Q438.FindAllAnagramsInAString;
 
 public class Main {
     public static void main(String[] args) {
-        new SearchInRotatedSortedArray().search(new int[]{4, 5, 6, 7, 8, 1, 2, 3}, 8);
+        System.out.println(new FindAllAnagramsInAString().findAnagrams("af", "za"));
     }
 }
+
+
+
