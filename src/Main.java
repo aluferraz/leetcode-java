@@ -1,9 +1,8 @@
-import leetcode.editor.en.Q224.BasicCalculator;
-import leetcode.editor.en.Q78.Subsets;
+import leetcode.editor.en.Q40.CombinationSumIi;
 
 public class Main {
     public static void main(String[] args) {
-        new BasicCalculator().calculate("  -1");
+        System.out.println(new CombinationSumIi().combinationSum2(new int[]{2, 5, 2, 1, 2}, 5));
 
 
     }
