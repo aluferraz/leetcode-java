@@ -1,8 +1,8 @@
-import leetcode.editor.en.Q40.CombinationSumIi;
+import leetcode.editor.en.Q22.GenerateParentheses;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new CombinationSumIi().combinationSum2(new int[]{2, 5, 2, 1, 2}, 5));
+        System.out.println(new GenerateParentheses().generateParenthesis(3));
 
 
     }
