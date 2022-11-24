@@ -1,11 +1,9 @@
-import leetcode.editor.en.Q213.HouseRobberIi;
-import leetcode.editor.en.Q22.GenerateParentheses;
-import leetcode.editor.en.Q279.PerfectSquares;
-import leetcode.editor.en.Q55.JumpGame;
+import leetcode.editor.en.Q45.JumpGameIi;
+import leetcode.editor.en.Q62.UniquePaths;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new JumpGame().canJump(new int[]{2, 3, 1, 1, 4}));
+        System.out.println(new UniquePaths().uniquePaths(3, 2));
 
 
     }
