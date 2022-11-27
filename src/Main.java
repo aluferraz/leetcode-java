@@ -1,10 +1,11 @@
-import leetcode.editor.en.Q413.ArithmeticSlices;
-import leetcode.editor.en.Q907.SumOfSubarrayMinimums;
-import leetcode.editor.en.Q91.DecodeWays;
+import leetcode.editor.en.Q1235.MaximumProfitInJobScheduling;
+import leetcode.editor.en.Q300.LongestIncreasingSubsequence;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new DecodeWays().numDecodings("1123"));
+        System.out.println(new LongestIncreasingSubsequence().lengthOfLIS(new int[]{0, 1, 0, 3, 2, 3})
+
+        );
 
 
     }
