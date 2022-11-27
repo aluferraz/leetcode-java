@@ -1,12 +1,11 @@
-import leetcode.editor.en.Q1235.MaximumProfitInJobScheduling;
-import leetcode.editor.en.Q300.LongestIncreasingSubsequence;
+import leetcode.editor.en.Q1143.LongestCommonSubsequence;
+import leetcode.editor.en.Q446.ArithmeticSlicesIiSubsequence;
+import leetcode.editor.en.Q583.DeleteOperationForTwoStrings;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new LongestIncreasingSubsequence().lengthOfLIS(new int[]{0, 1, 0, 3, 2, 3})
-
-        );
-
+        System.out.println(new DeleteOperationForTwoStrings().minDistance("park",
+                "spake"));
 
     }
 }
