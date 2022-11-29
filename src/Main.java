@@ -1,13 +1,13 @@
-import leetcode.editor.en.Q1143.LongestCommonSubsequence;
-import leetcode.editor.en.Q446.ArithmeticSlicesIiSubsequence;
-import leetcode.editor.en.Q583.DeleteOperationForTwoStrings;
+
+import leetcode.editor.en.Q343.IntegerBreak;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new DeleteOperationForTwoStrings().minDistance("park",
-                "spake"));
-
+        System.out.println(
+                new IntegerBreak().integerBreak(8)
+        );
     }
+
 }
 
 
