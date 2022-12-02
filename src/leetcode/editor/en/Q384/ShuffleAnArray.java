@@ -90,4 +90,8 @@ class Solution {
 
 
 public class ShuffleAnArray extends Solution {
+
+    public ShuffleAnArray(int[] nums){
+        super(nums);
+    }
 }

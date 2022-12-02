@@ -44,18 +44,19 @@ import java.util.*;
 
 
 //leetcode submit region begin(Prohibit modification and deletion)class Solution {
-//    public boolean isPalindrome(int x) {
-//        String palindromeS = String.valueOf(x);
-//        int right = palindromeS.length() - 1;
-//        int left = 0;
-//        while (left <= right) {
-//            if (palindromeS.charAt(left) != palindromeS.charAt(right)) return false;
-//            left++;
-//            right--;
-//        }
-//        return true;
-//    }
-//}
+class Solution{
+    public boolean isPalindrome(int x) {
+        String palindromeS = String.valueOf(x);
+        int right = palindromeS.length() - 1;
+        int left = 0;
+        while (left <= right) {
+            if (palindromeS.charAt(left) != palindromeS.charAt(right)) return false;
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
 
 //leetcode submit region end(Prohibit modification and deletion)
 
