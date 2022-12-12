@@ -1,11 +1,19 @@
-import leetcode.editor.en.Q582.KillProcess;
-import leetcode.editor.en.Q752.OpenTheLock;
+import leetcode.editor.en.Q1192.CriticalConnectionsInANetwork;
+import leetcode.editor.en.Q1319.NumberOfOperationsToMakeNetworkConnected;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new OpenTheLock().openLock(new String[]{"0201", "0101", "0102", "1212", "2002"}, "0202"));
+        List<List<Integer>> connections = new ArrayList<>();
+        connections.add(new ArrayList<>(Arrays.asList(0, 1)));
+        connections.add(new ArrayList<>(Arrays.asList(1, 2)));
+        connections.add(new ArrayList<>(Arrays.asList(2, 0)));
+        connections.add(new ArrayList<>(Arrays.asList(1, 3)));
+
+        System.out.println(new CriticalConnectionsInANetwork().criticalConnections(4, connections));
     }
 
 }
