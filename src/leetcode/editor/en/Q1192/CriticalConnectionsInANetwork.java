@@ -44,50 +44,48 @@ import java.util.*;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+
+    HashMap<Integer, Integer> arrivalTimes = new HashMap<>();
+    HashMap<Integer, List<Integer>> connectionsMap = new HashMap<>();
+
+    List<List<Integer>> result = new ArrayList<>();
+
     public List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
-        int[] parents = new int[n];
-        Arrays.fill(parents, -1);
         for (List<Integer> connection : connections) {
             int from = connection.get(0);
             int to = connection.get(1);
-            int fromParent = getParent(from, parents);
-            int toParent = getParent(to, parents);
-            if (fromParent != toParent) {
-                union(fromParent, toParent, parents);
-            }
+            List<Integer> nodeConnections = connectionsMap.getOrDefault(from, new LinkedList<>());
+            nodeConnections.add(to);
+            connectionsMap.put(from, nodeConnections);
+            nodeConnections = connectionsMap.getOrDefault(to, new LinkedList<>());
+            nodeConnections.add(from);
+            connectionsMap.put(to, nodeConnections);
         }
-        List<List<Integer>> result = new ArrayList<>();
-        for (int i = 0; i < parents.length; i++) {
-            if (parents[i] >= 0 && parents[parents[i]] == -2) {
-                List<Integer> critical = new ArrayList<>();
-                critical.add(i);
-                critical.add(parents[i]);
-                result.add(critical);
-            }
-        }
+        dfs(0, -1, 0);
         return result;
     }
 
-    private void union(int i, int j, int[] parents) {
-        if (parents[i] <= parents[j]) {
-            parents[i] += parents[j];
-            parents[j] = i;
-        } else {
-            union(j, i, parents);
-        }
-    }
+    private int dfs(int i, int parent, int arrivalTime) {
+        List<Integer> nodeConnections = connectionsMap.getOrDefault(i, new ArrayList<>());
+        int arrival = arrivalTimes.getOrDefault(i, -1);
+        if (arrival != -1) return arrival;
 
+        int minimumArrivalTime = arrivalTime;
+        arrivalTimes.put(i, minimumArrivalTime);
 
-    private int getParent(int i, int[] parents) {
-        Stack<Integer> newParents = new Stack<>();
-        while (parents[i] >= 0) {
-            newParents.push(i);
-            i = parents[i];
+        for (Integer connection : nodeConnections) {
+            if (connection == parent) continue;
+            int newArrival = arrivalTimes.getOrDefault(connection, -1);
+            if (newArrival == -1) {
+                newArrival = Math.min(minimumArrivalTime, dfs(connection, i, arrivalTime + 1));
+            }
+            minimumArrivalTime = Math.min(minimumArrivalTime, newArrival);
         }
-        while (!newParents.isEmpty()) {
-            parents[newParents.pop()] = i;
+        if (minimumArrivalTime == arrivalTime && parent != -1) {
+            result.add(Arrays.asList(parent, i));
         }
-        return i;
+        arrivalTimes.put(i, minimumArrivalTime);
+        return minimumArrivalTime;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
