@@ -1,12 +1,12 @@
-import leetcode.editor.en.Q309.BestTimeToBuyAndSellStockWithCooldown;
-import leetcode.editor.en.Q714.BestTimeToBuyAndSellStockWithTransactionFee;
+
+import leetcode.editor.en.Q410.SplitArrayLargestSum;
+import leetcode.editor.en.Q709.ToLowerCase;
+import leetcode.editor.en.Q739.DailyTemperatures;
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(new BestTimeToBuyAndSellStockWithTransactionFee().maxProfit(new int[]{
-                1, 3, 2, 8, 4, 9
-        }, 2));
+        System.out.println(new SplitArrayLargestSum().splitArray(new int[]{1, 4, 4}, 3));
     }
 
 }
