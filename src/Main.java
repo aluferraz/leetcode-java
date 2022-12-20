@@ -1,12 +1,10 @@
-
-import leetcode.editor.en.Q410.SplitArrayLargestSum;
-import leetcode.editor.en.Q709.ToLowerCase;
-import leetcode.editor.en.Q739.DailyTemperatures;
+import leetcode.editor.en.Q27.RemoveElement;
+import leetcode.editor.en.Q85.MaximalRectangle;
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(new SplitArrayLargestSum().splitArray(new int[]{1, 4, 4}, 3));
+        System.out.println(new RemoveElement().removeElement(new int[]{2}, 3));
     }
 
 }
