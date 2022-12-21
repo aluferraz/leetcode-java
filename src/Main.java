@@ -1,10 +1,12 @@
-import leetcode.editor.en.Q27.RemoveElement;
-import leetcode.editor.en.Q85.MaximalRectangle;
+
+import leetcode.editor.en.Q131.PalindromePartitioning;
+import leetcode.editor.en.Q132.PalindromePartitioningIi;
+import leetcode.editor.en.Q486.PredictTheWinner;
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(new RemoveElement().removeElement(new int[]{2}, 3));
+        System.out.println(new PalindromePartitioningIi().minCut("cdd"));
     }
 
 }
