@@ -1,16 +1,12 @@
-
-import leetcode.editor.en.Q131.PalindromePartitioning;
-import leetcode.editor.en.Q132.PalindromePartitioningIi;
-import leetcode.editor.en.Q416.PartitionEqualSubsetSum;
-import leetcode.editor.en.Q486.PredictTheWinner;
-import leetcode.editor.en.Q886.PossibleBipartition;
-import leetcode.editor.en.Q983.MinimumCostForTickets;
+import leetcode.editor.en.Q834.SumOfDistancesInTree;
 import org.json.JSONArray;
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(new MinimumCostForTickets().mincostTickets(toIntArray("[1,4,6,7,8,20]"), toIntArray("[2,7,15]")));
+        System.out.println(Arrays.toString(new SumOfDistancesInTree().sumOfDistancesInTree(6, toIntMatrix("[[0,1],[0,2],[2,3],[2,4],[2,5]]"))));
     }
 
     private static int[] toIntArray(String s) {
