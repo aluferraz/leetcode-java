@@ -1,3 +1,4 @@
+import leetcode.editor.en.Q174.DungeonGame;
 import leetcode.editor.en.Q834.SumOfDistancesInTree;
 import org.json.JSONArray;
 
@@ -6,7 +7,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Arrays.toString(new SumOfDistancesInTree().sumOfDistancesInTree(6, toIntMatrix("[[0,1],[0,2],[2,3],[2,4],[2,5]]"))));
+        System.out.println(new DungeonGame().calculateMinimumHP(toIntMatrix("[[-3,5]]")));
     }
 
     private static int[] toIntArray(String s) {
