@@ -46,31 +46,48 @@ import java.util.*;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    Integer[][] cache;
+//    Integer[][] cache;
 
     public int maxProfit(int[] prices) {
-        cache = new Integer[prices.length][2];
-        return maxProfitHelper(prices, 0, 1);
+        int[] buy = new int[prices.length];
+        int[] sell = new int[prices.length];
+        int[] wait = new int[prices.length];
+
+        buy[0] = -prices[0];
+
+        for (int i = 1; i < prices.length; i++) {
+            sell[i] = buy[i - 1] + prices[i];
+            wait[i] = Math.max(wait[i - 1], sell[i - 1]);
+            buy[i] = Math.max(buy[i - 1], wait[i - 1] - prices[i]);
+        }
+        return Math.max(sell[prices.length - 1], wait[prices.length - 1]);
+
     }
 
-    private int maxProfitHelper(int[] prices, int i, int canBuy) {
-        if (i >= prices.length) {
-            return 0;
-        }
-        if (cache[i][canBuy] != null) return cache[i][canBuy];
-        int newValue;
-        if (canBuy == 1) {
-            int buy = maxProfitHelper(prices, i + 1, 0) - prices[i]; //buy
-            int cooldown = maxProfitHelper(prices, i + 1, 1);  //do nothing
-            newValue = Math.max(buy, cooldown);
-        } else {
-            int sell = prices[i] + maxProfitHelper(prices, i + 2, 1); //Sell
-            int cooldown = maxProfitHelper(prices, i + 1, 0); //do nothing
-            newValue = Math.max(sell, cooldown);
-        }
-        cache[i][canBuy] = newValue;
-        return newValue;
-    }
+
+//    public int maxProfit(int[] prices) {
+//        cache = new Integer[prices.length][2];
+//        return maxProfitHelper(prices, 0, 1);
+//    }
+
+//    private int maxProfitHelper(int[] prices, int i, int canBuy) {
+//        if (i >= prices.length) {
+//            return 0;
+//        }
+//        if (cache[i][canBuy] != null) return cache[i][canBuy];
+//        int newValue;
+//        if (canBuy == 1) {
+//            int buy = maxProfitHelper(prices, i + 1, 0) - prices[i]; //buy
+//            int cooldown = maxProfitHelper(prices, i + 1, 1);  //do nothing
+//            newValue = Math.max(buy, cooldown);
+//        } else {
+//            int sell = prices[i] + maxProfitHelper(prices, i + 2, 1); //Sell
+//            int cooldown = maxProfitHelper(prices, i + 1, 0); //do nothing
+//            newValue = Math.max(sell, cooldown);
+//        }
+//        cache[i][canBuy] = newValue;
+//        return newValue;
+//    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

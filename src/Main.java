@@ -1,4 +1,6 @@
 import leetcode.editor.en.Q174.DungeonGame;
+import leetcode.editor.en.Q207.CourseSchedule;
+import leetcode.editor.en.Q210.CourseScheduleIi;
 import leetcode.editor.en.Q834.SumOfDistancesInTree;
 import org.json.JSONArray;
 
@@ -7,7 +9,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(new DungeonGame().calculateMinimumHP(toIntMatrix("[[-3,5]]")));
+        System.out.println(Arrays.toString(new CourseScheduleIi().findOrder(4, toIntMatrix("[[1,0],[2,0],[3,1],[3,2]]"))));
     }
 
     private static int[] toIntArray(String s) {
