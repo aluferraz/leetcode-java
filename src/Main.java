@@ -1,7 +1,7 @@
-import leetcode.editor.en.Q174.DungeonGame;
-import leetcode.editor.en.Q207.CourseSchedule;
 import leetcode.editor.en.Q210.CourseScheduleIi;
-import leetcode.editor.en.Q834.SumOfDistancesInTree;
+import leetcode.editor.en.Q310.MinimumHeightTrees;
+import leetcode.editor.en.Q329.LongestIncreasingPathInAMatrix;
+import leetcode.editor.en.Q790.DominoAndTrominoTiling;
 import org.json.JSONArray;
 
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Arrays.toString(new CourseScheduleIi().findOrder(4, toIntMatrix("[[1,0],[2,0],[3,1],[3,2]]"))));
+        System.out.println(new LongestIncreasingPathInAMatrix().longestIncreasingPath(toIntMatrix("[[9,9,4],[6,6,8],[2,1,1]]")));
     }
 
     private static int[] toIntArray(String s) {
