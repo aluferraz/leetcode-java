@@ -51,25 +51,6 @@ class Solution {
         return target == 0;
     }
 
-//    public boolean canJump(int[] nums) {
-//        cache = new int[(int) Math.pow(10, 5)];
-//        return dfsJump(nums, 0);
-//    }
-//
-//    private boolean dfsJump(int[] nums, int i) {
-//        if (i == nums.length - 1) return true;
-//        if (cache[i] == -1) {
-//            return false;
-//        }
-//        if (i + nums[i] >= (nums.length - 1)) return true;
-//        for (int j = 1; j <= nums[i]; j++) {
-//            if (dfsJump(nums, i + j)) {
-//                return true;
-//            }
-//        }
-//        cache[i] = -1;
-//        return false;
-//    }
 
 }
 //leetcode submit region end(Prohibit modification and deletion)
