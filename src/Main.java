@@ -1,14 +1,20 @@
-import leetcode.editor.en.Q1136.ParallelCourses;
-import leetcode.editor.en.Q260.SingleNumberIii;
-import leetcode.editor.en.Q864.ShortestPathToGetAllKeys;
-import leetcode.editor.en.Q995.MinimumNumberOfKConsecutiveBitFlips;
+
+import leetcode.editor.en.Q146.LRUCache;
 import org.json.JSONArray;
 
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new MinimumNumberOfKConsecutiveBitFlips().minKBitFlips(toIntArray("[0,0,0,1,0,1,1,0]"), 3));
+
+        LRUCache lRUCache = new LRUCache(2);
+        lRUCache.put(2, 1);
+        lRUCache.put(1, 1);
+        lRUCache.put(2, 3);
+        lRUCache.put(4, 1);
+        lRUCache.get(1);
+        lRUCache.get(2);
+
     }
 
 
