@@ -1,13 +1,7 @@
-
-import leetcode.editor.en.Q146.LRUCache;
-import leetcode.editor.en.Q1962.RemoveStonesToMinimizeTheTotal;
 import org.json.JSONArray;
-
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new RemoveStonesToMinimizeTheTotal().minStoneSum(toIntArray("[5,4,9]"), 2));
 
     }
 
