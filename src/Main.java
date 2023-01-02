@@ -1,8 +1,10 @@
+
+import leetcode.editor.en.Q980.UniquePathsIii;
 import org.json.JSONArray;
 
 public class Main {
     public static void main(String[] args) {
-
+        System.out.println(new UniquePathsIii().uniquePathsIII(toIntMatrix("[[1,0,0,0],[0,0,0,0],[0,0,2,-1]]")));
     }
 
 
