@@ -1,10 +1,11 @@
 
+import leetcode.editor.en.Q28.FindTheIndexOfTheFirstOccurrenceInAString;
 import leetcode.editor.en.Q980.UniquePathsIii;
 import org.json.JSONArray;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new UniquePathsIii().uniquePathsIII(toIntMatrix("[[1,0,0,0],[0,0,0,0],[0,0,2,-1]]")));
+        System.out.println(new FindTheIndexOfTheFirstOccurrenceInAString().strStr("ababcaababcaabc", "ababcaabc"));
     }
 
 
