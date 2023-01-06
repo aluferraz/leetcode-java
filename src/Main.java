@@ -1,14 +1,11 @@
-
-import leetcode.editor.en.Q2244.MinimumRoundsToCompleteAllTasks;
-import leetcode.editor.en.Q28.FindTheIndexOfTheFirstOccurrenceInAString;
-import leetcode.editor.en.Q88.MergeSortedArray;
-import leetcode.editor.en.Q980.UniquePathsIii;
-import leetcode.editor.en.Q995.MinimumNumberOfKConsecutiveBitFlips;
+import leetcode.editor.en.Q121.BestTimeToBuyAndSellStock;
+import leetcode.editor.en.Q452.MinimumNumberOfArrowsToBurstBalloons;
 import org.json.JSONArray;
 
 public class Main {
     public static void main(String[] args) {
-        new MergeSortedArray().merge(toIntArray("[4,5,6,0,0,0]\n"), 3, toIntArray("[1,2,3]\n"), 3);
+        System.out.println(new BestTimeToBuyAndSellStock().maxProfit(toIntArray("[2,1,2,1,0,1,2]")));
+
     }
 
 
