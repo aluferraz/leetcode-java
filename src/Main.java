@@ -1,10 +1,12 @@
 import leetcode.editor.en.Q121.BestTimeToBuyAndSellStock;
+import leetcode.editor.en.Q1833.MaximumIceCreamBars;
 import leetcode.editor.en.Q452.MinimumNumberOfArrowsToBurstBalloons;
+import leetcode.editor.en.Q566.ReshapeTheMatrix;
 import org.json.JSONArray;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new BestTimeToBuyAndSellStock().maxProfit(toIntArray("[2,1,2,1,0,1,2]")));
+        new ReshapeTheMatrix().matrixReshape(toIntMatrix("[[1,2],[3,4]]"), 1, 4);
 
     }
 
