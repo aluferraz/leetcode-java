@@ -1,4 +1,5 @@
 import leetcode.editor.en.Q121.BestTimeToBuyAndSellStock;
+import leetcode.editor.en.Q134.GasStation;
 import leetcode.editor.en.Q1833.MaximumIceCreamBars;
 import leetcode.editor.en.Q452.MinimumNumberOfArrowsToBurstBalloons;
 import leetcode.editor.en.Q566.ReshapeTheMatrix;
@@ -6,7 +7,7 @@ import org.json.JSONArray;
 
 public class Main {
     public static void main(String[] args) {
-        new ReshapeTheMatrix().matrixReshape(toIntMatrix("[[1,2],[3,4]]"), 1, 4);
+        new GasStation().canCompleteCircuit(toIntArray("[1,2,3,4,5,5,70]"), toIntArray("[2,3,4,3,9,6,2]"));
 
     }
 
