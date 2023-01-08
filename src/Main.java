@@ -7,7 +7,7 @@ import org.json.JSONArray;
 
 public class Main {
     public static void main(String[] args) {
-        new GasStation().canCompleteCircuit(toIntArray("[1,2,3,4,5,5,70]"), toIntArray("[2,3,4,3,9,6,2]"));
+         new GasStation().canCompleteCircuit(toIntArray("[1,2,3,4,5,5,70]"), toIntArray("[2,3,4,3,9,6,2]"));
 
     }
 
