@@ -1,9 +1,10 @@
+import leetcode.editor.en.Q2214.MinimumHealthToBeatGame;
 import leetcode.editor.en.Q387.FirstUniqueCharacterInAString;
 import org.json.JSONArray;
 
 public class Main {
     public static void main(String[] args) {
-        new FirstUniqueCharacterInAString().firstUniqChar("aadadaad");
+        System.out.println(new MinimumHealthToBeatGame().minimumHealth(toIntArray("[2,7,4,3]"), 4));
     }
 
 
