@@ -1,5 +1,7 @@
 import leetcode.editor.en.Q1443.MinimumTimeToCollectAllApplesInATree;
+import leetcode.editor.en.Q1519.NumberOfNodesInTheSubTreeWithTheSameLabel;
 import leetcode.editor.en.Q2214.MinimumHealthToBeatGame;
+import leetcode.editor.en.Q315.CountOfSmallerNumbersAfterSelf;
 import leetcode.editor.en.Q387.FirstUniqueCharacterInAString;
 import leetcode.editor.en.Q57.InsertInterval;
 import org.json.JSONArray;
@@ -9,7 +11,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new InsertInterval().insert(toIntMatrix("[[3,5],[12,15]]\n"), toIntArray("[6,6]\n")));
+        System.out.println(new NumberOfNodesInTheSubTreeWithTheSameLabel().countSubTrees(7, toIntMatrix("[[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]]"), "abaedcd"));
     }
 
     private static List<Boolean> toBooleanList(String s) {
