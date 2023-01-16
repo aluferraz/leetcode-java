@@ -3,6 +3,7 @@ import leetcode.editor.en.Q1443.MinimumTimeToCollectAllApplesInATree;
 import leetcode.editor.en.Q1519.NumberOfNodesInTheSubTreeWithTheSameLabel;
 import leetcode.editor.en.Q2214.MinimumHealthToBeatGame;
 import leetcode.editor.en.Q2246.LongestPathWithDifferentAdjacentCharacters;
+import leetcode.editor.en.Q2421.NumberOfGoodPaths;
 import leetcode.editor.en.Q315.CountOfSmallerNumbersAfterSelf;
 import leetcode.editor.en.Q387.FirstUniqueCharacterInAString;
 import leetcode.editor.en.Q57.InsertInterval;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new LexicographicallySmallestEquivalentString().smallestEquivalentString("leetcode", "programs", "sourcecode"));
+        System.out.println(new NumberOfGoodPaths().numberOfGoodPaths(toIntArray("[1,1,2,2,3]\n"), toIntMatrix("[[0,1],[1,2],[2,3],[2,4]]\n")));
     }
 
     private static List<Boolean> toBooleanList(String s) {
