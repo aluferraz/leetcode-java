@@ -6,15 +6,21 @@ import leetcode.editor.en.Q2246.LongestPathWithDifferentAdjacentCharacters;
 import leetcode.editor.en.Q2421.NumberOfGoodPaths;
 import leetcode.editor.en.Q315.CountOfSmallerNumbersAfterSelf;
 import leetcode.editor.en.Q387.FirstUniqueCharacterInAString;
+import leetcode.editor.en.Q56.MergeIntervals;
 import leetcode.editor.en.Q57.InsertInterval;
+import leetcode.editor.en.Q59.SpiralMatrixIi;
+import leetcode.editor.en.Q75.SortColors;
+import leetcode.editor.en.Q918.MaximumSumCircularSubarray;
+import leetcode.editor.en.Q974.SubarraySumsDivisibleByK;
 import org.json.JSONArray;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new NumberOfGoodPaths().numberOfGoodPaths(toIntArray("[1,1,2,2,3]\n"), toIntMatrix("[[0,1],[1,2],[2,3],[2,4]]\n")));
+        System.out.println(Arrays.deepToString(new SpiralMatrixIi().generateMatrix(3)));
     }
 
     private static List<Boolean> toBooleanList(String s) {
