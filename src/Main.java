@@ -1,26 +1,15 @@
-import leetcode.editor.en.Q1061.LexicographicallySmallestEquivalentString;
-import leetcode.editor.en.Q1443.MinimumTimeToCollectAllApplesInATree;
-import leetcode.editor.en.Q1519.NumberOfNodesInTheSubTreeWithTheSameLabel;
-import leetcode.editor.en.Q2214.MinimumHealthToBeatGame;
-import leetcode.editor.en.Q2246.LongestPathWithDifferentAdjacentCharacters;
-import leetcode.editor.en.Q2421.NumberOfGoodPaths;
-import leetcode.editor.en.Q315.CountOfSmallerNumbersAfterSelf;
-import leetcode.editor.en.Q387.FirstUniqueCharacterInAString;
-import leetcode.editor.en.Q56.MergeIntervals;
-import leetcode.editor.en.Q57.InsertInterval;
-import leetcode.editor.en.Q59.SpiralMatrixIi;
-import leetcode.editor.en.Q75.SortColors;
-import leetcode.editor.en.Q918.MaximumSumCircularSubarray;
-import leetcode.editor.en.Q974.SubarraySumsDivisibleByK;
+import leetcode.editor.en.Q1566.DetectPatternOfLengthMRepeatedKOrMoreTimes;
+import leetcode.editor.en.Q240.SearchA2dMatrixIi;
+import leetcode.editor.en.Q435.NonOverlappingIntervals;
+import leetcode.editor.en.Q506.RelativeRanks;
 import org.json.JSONArray;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Arrays.deepToString(new SpiralMatrixIi().generateMatrix(3)));
+        System.out.println(new DetectPatternOfLengthMRepeatedKOrMoreTimes().containsPattern(toIntArray("[1,2,1,2,1,3]\n"), 2, 3));
     }
 
     private static List<Boolean> toBooleanList(String s) {
