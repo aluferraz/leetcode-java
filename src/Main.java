@@ -1,7 +1,11 @@
 import leetcode.editor.en.Q1566.DetectPatternOfLengthMRepeatedKOrMoreTimes;
+import leetcode.editor.en.Q238.ProductOfArrayExceptSelf;
 import leetcode.editor.en.Q240.SearchA2dMatrixIi;
+import leetcode.editor.en.Q334.IncreasingTripletSubsequence;
 import leetcode.editor.en.Q435.NonOverlappingIntervals;
 import leetcode.editor.en.Q506.RelativeRanks;
+import leetcode.editor.en.Q560.SubarraySumEqualsK;
+import leetcode.editor.en.Q93.RestoreIpAddresses;
 import org.json.JSONArray;
 
 import java.util.LinkedList;
@@ -9,7 +13,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new DetectPatternOfLengthMRepeatedKOrMoreTimes().containsPattern(toIntArray("[1,2,1,2,1,3]\n"), 2, 3));
+        System.out.println(new SubarraySumEqualsK().subarraySum(toIntArray("[1,-1,0]"), 0));
     }
 
     private static List<Boolean> toBooleanList(String s) {
