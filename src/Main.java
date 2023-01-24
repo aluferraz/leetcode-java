@@ -1,19 +1,20 @@
-import leetcode.editor.en.Q1566.DetectPatternOfLengthMRepeatedKOrMoreTimes;
-import leetcode.editor.en.Q238.ProductOfArrayExceptSelf;
-import leetcode.editor.en.Q240.SearchA2dMatrixIi;
-import leetcode.editor.en.Q334.IncreasingTripletSubsequence;
-import leetcode.editor.en.Q435.NonOverlappingIntervals;
-import leetcode.editor.en.Q506.RelativeRanks;
-import leetcode.editor.en.Q560.SubarraySumEqualsK;
-import leetcode.editor.en.Q93.RestoreIpAddresses;
+import leetcode.editor.en.Q763.PartitionLabels;
+import leetcode.editor.en.Q997.FindTheTownJudge;
 import org.json.JSONArray;
+import org.json.JSONTokener;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new SubarraySumEqualsK().subarraySum(toIntArray("[1,-1,0]"), 0));
+    public static void main(String[] args) throws IOException {
+        System.out.println(new PartitionLabels().partitionLabels("ababcbacadefegdehijhklij"));
     }
 
     private static List<Boolean> toBooleanList(String s) {
@@ -54,6 +55,24 @@ public class Main {
 
     private static int[][] toIntMatrix(String s) {
         JSONArray jsonArray = new JSONArray(s);
+        int[][] result = new int[jsonArray.length()][jsonArray.getJSONArray(0).length()];
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONArray row = jsonArray.getJSONArray(i);
+            for (int j = 0; j < row.length(); j++) {
+                result[i][j] = row.getInt(j);
+            }
+        }
+        return result;
+    }
+
+    private static int[][] toIntMatrixFromFile() {
+        String resourceName = "testcase.txt";
+        InputStream is = Main.class.getResourceAsStream(resourceName);
+        if (is == null) {
+            throw new NullPointerException("Cannot find resource file " + resourceName);
+        }
+        JSONTokener tokener = new JSONTokener(is);
+        JSONArray jsonArray = new JSONArray(tokener);
         int[][] result = new int[jsonArray.length()][jsonArray.getJSONArray(0).length()];
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONArray row = jsonArray.getJSONArray(i);
