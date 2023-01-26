@@ -1,3 +1,6 @@
+import leetcode.editor.en.Q1863.SumOfAllSubsetXorTotals;
+import leetcode.editor.en.Q187.RepeatedDnaSequences;
+import leetcode.editor.en.Q2359.FindClosestNodeToGivenTwoNodes;
 import leetcode.editor.en.Q763.PartitionLabels;
 import leetcode.editor.en.Q997.FindTheTownJudge;
 import org.json.JSONArray;
@@ -14,7 +17,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new PartitionLabels().partitionLabels("ababcbacadefegdehijhklij"));
+        System.out.println(new RepeatedDnaSequences().findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
     }
 
     private static List<Boolean> toBooleanList(String s) {
