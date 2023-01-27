@@ -1,24 +1,26 @@
-import leetcode.editor.en.Q1863.SumOfAllSubsetXorTotals;
+import leetcode.editor.en.Q1184.DistanceBetweenBusStops;
 import leetcode.editor.en.Q187.RepeatedDnaSequences;
-import leetcode.editor.en.Q2359.FindClosestNodeToGivenTwoNodes;
-import leetcode.editor.en.Q763.PartitionLabels;
-import leetcode.editor.en.Q997.FindTheTownJudge;
+import leetcode.editor.en.Q787.CheapestFlightsWithinKStops;
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.LinkedList;
 import java.util.List;
 
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new RepeatedDnaSequences().findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
+
+
+
+        System.out.println(new DistanceBetweenBusStops().distanceBetweenBusStops(toIntArray("[1,2,3,4]\n"), 0, 3));
     }
+
+
+
 
     private static List<Boolean> toBooleanList(String s) {
         boolean[] arr = toBooleanArray(s);
