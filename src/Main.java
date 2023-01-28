@@ -1,5 +1,6 @@
 import leetcode.editor.en.Q1184.DistanceBetweenBusStops;
 import leetcode.editor.en.Q187.RepeatedDnaSequences;
+import leetcode.editor.en.Q472.ConcatenatedWords;
 import leetcode.editor.en.Q787.CheapestFlightsWithinKStops;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -15,12 +16,24 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
 
-
-        System.out.println(new DistanceBetweenBusStops().distanceBetweenBusStops(toIntArray("[1,2,3,4]\n"), 0, 3));
+        System.out.println(new ConcatenatedWords().findAllConcatenatedWordsInADict(toStringArrayFromFile()));
     }
 
 
-
+    private static String[] toStringArrayFromFile() {
+        String resourceName = "testcase.txt";
+        InputStream is = Main.class.getResourceAsStream(resourceName);
+        if (is == null) {
+            throw new NullPointerException("Cannot find resource file " + resourceName);
+        }
+        JSONTokener tokener = new JSONTokener(is);
+        JSONArray jsonArray = new JSONArray(tokener);
+        String[] result = new String[jsonArray.length()];
+        for (int i = 0; i < jsonArray.length(); i++) {
+            result[i] = jsonArray.getString(i);
+        }
+        return result;
+    }
 
     private static List<Boolean> toBooleanList(String s) {
         boolean[] arr = toBooleanArray(s);
