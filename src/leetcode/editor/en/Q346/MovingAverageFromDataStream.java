@@ -76,5 +76,8 @@ class MovingAverage {
 //leetcode submit region end(Prohibit modification and deletion)
 
 
-public class MovingAverageFromDataStream extends Solution {
+public class MovingAverageFromDataStream extends MovingAverage {
+    MovingAverageFromDataStream() {
+        super(0);
+    }
 }

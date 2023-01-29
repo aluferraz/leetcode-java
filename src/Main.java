@@ -1,7 +1,6 @@
-import leetcode.editor.en.Q1184.DistanceBetweenBusStops;
-import leetcode.editor.en.Q187.RepeatedDnaSequences;
-import leetcode.editor.en.Q472.ConcatenatedWords;
-import leetcode.editor.en.Q787.CheapestFlightsWithinKStops;
+
+import leetcode.editor.en.Q352.DataStreamAsDisjointIntervals;
+import leetcode.editor.en.Q707.DesignLinkedList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -14,9 +13,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-
-
-        System.out.println(new ConcatenatedWords().findAllConcatenatedWordsInADict(toStringArrayFromFile()));
+        DesignLinkedList myLinkedList = new DesignLinkedList();
     }
 
 
