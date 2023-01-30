@@ -85,65 +85,69 @@ import java.util.*;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 
-
 public class LFUCache {
-    // key: original key, value: frequency and original value.
-    private Map<Integer, Pair<Integer, Integer>> cache;
-    // key: frequency, value: All keys that have the same frequency.
-    private Map<Integer, LinkedHashSet<Integer>> frequencies;
-    private int minf;
-    private int capacity;
 
-    private void insert(int key, int frequency, int value) {
-        cache.put(key, new Pair<>(frequency, value));
-        frequencies.putIfAbsent(frequency, new LinkedHashSet<>());
-        frequencies.get(frequency).add(key);
-    }
+    HashMap<Integer, LinkedHashSet<Integer>> frequencies = new HashMap<>();
+    HashMap<Integer, Pair<Integer, Integer>> keysValueFrequency = new HashMap<>();
+    int capacity;
+    int minFrequency = Integer.MAX_VALUE;
+
 
     public LFUCache(int capacity) {
-        cache = new HashMap<>();
-        frequencies = new HashMap<>();
-        minf = 0;
         this.capacity = capacity;
     }
 
     public int get(int key) {
-        Pair<Integer, Integer> frequencyAndValue = cache.get(key);
-        if (frequencyAndValue == null) {
-            return -1;
+        if (keysValueFrequency.containsKey(key)) {
+            int value = keysValueFrequency.get(key).getKey();
+            put(key, value);
+            return value;
         }
-        final int frequency = frequencyAndValue.getKey();
-        final Set<Integer> keys = frequencies.get(frequency);
-        keys.remove(key);
-        if (minf == frequency && keys.isEmpty()) {
-            ++minf;
-        }
-        final int value = frequencyAndValue.getValue();
-        insert(key, frequency + 1, value);
-        return value;
+        return -1;
     }
 
     public void put(int key, int value) {
-        if (capacity <= 0) {
-            return;
+        if (capacity == 0) return;
+        Pair<Integer, Integer> keyInfo = keysValueFrequency.getOrDefault(key, new Pair<>(value, 0));
+        int frequency = keyInfo.getValue();
+        purge(key);
+        removeFromFrequency(key, frequency);
+        frequency++;
+        keysValueFrequency.put(key, new Pair<>(value, frequency));
+        addToFrequency(key, frequency);
+    }
+
+    private void purge(int key) {
+        if (keysValueFrequency.size() == capacity && !keysValueFrequency.containsKey(key)) { // New value
+            minFrequency = getMinFrequency();
+            int LRUValue = frequencies.get(minFrequency).iterator().next();
+            removeFromFrequency(LRUValue, minFrequency);
         }
-        Pair<Integer, Integer> frequencyAndValue = cache.get(key);
-        if (frequencyAndValue != null) {
-            cache.put(key, new Pair<>(frequencyAndValue.getKey(), value));
-            get(key);
-            return;
+    }
+
+    private void addToFrequency(int key, int frequency) {
+        frequencies.computeIfAbsent(frequency, (k) -> new LinkedHashSet<>()).add(key);
+        minFrequency = Math.min(frequency, minFrequency);
+    }
+
+    private void removeFromFrequency(int key, int frequency) {
+        if (frequencies.containsKey(frequency)) {
+            HashSet<Integer> valuesInFreq = frequencies.get(frequency);
+            valuesInFreq.remove(key);
+            keysValueFrequency.remove(key);
+            if (valuesInFreq.isEmpty()) {
+                frequencies.remove(frequency);
+                if (frequency == minFrequency) {
+                    minFrequency = Integer.MAX_VALUE;
+                }
+            }
         }
-        if (capacity == cache.size()) {
-            final Set<Integer> keys = frequencies.get(minf);
-            final int keyToDelete = keys.iterator().next();
-            cache.remove(keyToDelete);
-            keys.remove(keyToDelete);
-        }
-        minf = 1;
-        insert(key, 1, value);
+    }
+
+    private int getMinFrequency() {
+        return minFrequency;
     }
 }
-
 /**
  * Your LFUCache object will be instantiated and called as such:
  * LFUCache obj = new LFUCache(capacity);

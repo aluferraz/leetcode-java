@@ -1,5 +1,7 @@
 
+import leetcode.editor.en.Q25.ReverseNodesInKGroup;
 import leetcode.editor.en.Q352.DataStreamAsDisjointIntervals;
+import leetcode.editor.en.Q460.LFUCache;
 import leetcode.editor.en.Q707.DesignLinkedList;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -13,7 +15,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        DesignLinkedList myLinkedList = new DesignLinkedList();
+        new ReverseNodesInKGroup().reverseKGroup(2);
     }
 
 
