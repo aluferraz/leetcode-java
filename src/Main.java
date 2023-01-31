@@ -1,4 +1,5 @@
 
+import leetcode.editor.en.Q1249.MinimumRemoveToMakeValidParentheses;
 import leetcode.editor.en.Q25.ReverseNodesInKGroup;
 import leetcode.editor.en.Q352.DataStreamAsDisjointIntervals;
 import leetcode.editor.en.Q460.LFUCache;
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        new ReverseNodesInKGroup().reverseKGroup(2);
+        System.out.println( new MinimumRemoveToMakeValidParentheses().minRemoveToMakeValid("lee(t(c)o)de)") );
     }
 
 
