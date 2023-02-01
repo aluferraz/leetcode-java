@@ -1,5 +1,7 @@
 
+import leetcode.editor.en.Q108.ConvertSortedArrayToBinarySearchTree;
 import leetcode.editor.en.Q1249.MinimumRemoveToMakeValidParentheses;
+import leetcode.editor.en.Q1626.BestTeamWithNoConflicts;
 import leetcode.editor.en.Q25.ReverseNodesInKGroup;
 import leetcode.editor.en.Q352.DataStreamAsDisjointIntervals;
 import leetcode.editor.en.Q460.LFUCache;
@@ -16,7 +18,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println( new MinimumRemoveToMakeValidParentheses().minRemoveToMakeValid("lee(t(c)o)de)") );
+        new ConvertSortedArrayToBinarySearchTree().sortedArrayToBST(toIntArray("[-10,-3,0,5,9]"));
     }
 
 
