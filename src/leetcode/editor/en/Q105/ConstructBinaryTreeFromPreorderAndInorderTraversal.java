@@ -77,6 +77,7 @@ class Solution {
 
     int preorderIndex;
     Map<Integer, Integer> inorderIndexMap;
+
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         preorderIndex = 0;
         // build a hashmap to store value -> its index relations
@@ -104,7 +105,7 @@ class Solution {
     }
 }
 
-}
+
 //leetcode submit region end(Prohibit modification and deletion)
 
 
