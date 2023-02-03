@@ -7,7 +7,9 @@ import leetcode.editor.en.Q25.ReverseNodesInKGroup;
 import leetcode.editor.en.Q352.DataStreamAsDisjointIntervals;
 import leetcode.editor.en.Q450.DeleteNodeInABst;
 import leetcode.editor.en.Q460.LFUCache;
+import leetcode.editor.en.Q6.ZigzagConversion;
 import leetcode.editor.en.Q707.DesignLinkedList;
+import leetcode.editor.en.Q953.VerifyingAnAlienDictionary;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -20,7 +22,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new DeleteNodeInABst().deleteNode(1));
+        System.out.println(new ZigzagConversion().convert("PAYPALISHIRING", 3));
     }
 
 
