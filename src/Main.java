@@ -1,17 +1,5 @@
-
-import leetcode.editor.en.Q1071.GreatestCommonDivisorOfStrings;
-import leetcode.editor.en.Q108.ConvertSortedArrayToBinarySearchTree;
-import leetcode.editor.en.Q1249.MinimumRemoveToMakeValidParentheses;
-import leetcode.editor.en.Q1626.BestTeamWithNoConflicts;
-import leetcode.editor.en.Q25.ReverseNodesInKGroup;
-import leetcode.editor.en.Q352.DataStreamAsDisjointIntervals;
-import leetcode.editor.en.Q450.DeleteNodeInABst;
-import leetcode.editor.en.Q460.LFUCache;
-import leetcode.editor.en.Q6.ZigzagConversion;
-import leetcode.editor.en.Q707.DesignLinkedList;
-import leetcode.editor.en.Q953.VerifyingAnAlienDictionary;
+import leetcode.editor.en.Q297.SerializeAndDeserializeBinaryTree;
 import org.json.JSONArray;
-import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.IOException;
@@ -22,7 +10,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new ZigzagConversion().convert("PAYPALISHIRING", 3));
+        String ser = new SerializeAndDeserializeBinaryTree().serialize();
+        System.out.println(ser);
+        new SerializeAndDeserializeBinaryTree().deserialize(ser);
     }
 
 
