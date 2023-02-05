@@ -1,18 +1,20 @@
+import leetcode.editor.en.Q1557.MinimumNumberOfVerticesToReachAllNodes;
 import leetcode.editor.en.Q297.SerializeAndDeserializeBinaryTree;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String ser = new SerializeAndDeserializeBinaryTree().serialize();
-        System.out.println(ser);
-        new SerializeAndDeserializeBinaryTree().deserialize(ser);
+        System.out.println(new MinimumNumberOfVerticesToReachAllNodes().findSmallestSetOfVertices(6, twoDArrayToList(toIntMatrix("[[0,1],[0,2],[2,5],[3,4],[4,2]]"))));
     }
 
 
@@ -97,6 +99,18 @@ public class Main {
         return result;
     }
 
+    private static List<List<Integer>> twoDArrayToList(int[][] twoDArray) {
+        List<List<Integer>> list = new ArrayList<>();
+        for (int[] array : twoDArray) {
+            List<Integer> row = new ArrayList<>();
+            for (int num :
+                    array) {
+                row.add(num);
+            }
+            list.add(row);
+        }
+        return list;
+    }
 }
 
 
