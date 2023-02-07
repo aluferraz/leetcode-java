@@ -45,7 +45,12 @@ package leetcode.editor.en.Q278;
 //leetcode submit region begin(Prohibit modification and deletion)
 /* The isBadVersion API is defined in the parent class VersionControl.
       boolean isBadVersion(int version); */
-
+class VersionControl{
+    VersionControl(){}
+    boolean isBadVersion(int version){
+        return true;
+    }
+}
 //leetcode submit region end(Prohibit modification and deletion)
 public class FirstBadVersion extends VersionControl {
     public int firstBadVersion(int n) {
