@@ -1,4 +1,5 @@
 import leetcode.editor.en.Q1557.MinimumNumberOfVerticesToReachAllNodes;
+import leetcode.editor.en.Q2306.NamingACompany;
 import leetcode.editor.en.Q297.SerializeAndDeserializeBinaryTree;
 import org.json.JSONArray;
 import org.json.JSONTokener;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new MinimumNumberOfVerticesToReachAllNodes().findSmallestSetOfVertices(6, twoDArrayToList(toIntMatrix("[[0,1],[0,2],[2,5],[3,4],[4,2]]"))));
+        System.out.println(new NamingACompany().distinctNames(toStringArray("[\"coffee\",\"donuts\",\"time\",\"toffee\"]")));
     }
 
 
