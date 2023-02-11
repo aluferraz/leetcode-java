@@ -44,8 +44,68 @@ import javafx.util.Pair;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+
+    int[][] dirs = new int[][]{
+            new int[]{1,0},
+            new int[]{-1,0},
+            new int[]{0,1},
+            new int[]{0,-1},
+    };
+    Integer[][] visited;
     public int maxDistance(int[][] grid) {
-        
+
+        visited = new Integer[grid.length][grid[0].length];
+        int res = -1;
+
+        Queue<int[]> q = new LinkedList<>();
+        for (int i = 0; i < grid.length ; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if(grid[i][j] == 1){
+                    q.add(new int[]{i,j,0});
+                    visited[i][j] = 0;
+                }
+            }
+        }
+        bfs(q);
+
+        for (int i = 0; i < visited.length; i++) {
+            for (int j = 0; j < visited.length; j++) {
+                if(visited[i][j] == null) return -1;
+                res = Math.max(visited[i][j],res);
+            }
+        }
+
+        return res == 0 ? -1 : res;
+    }
+
+
+    private void bfs(Queue<int[]> q){
+        while (!q.isEmpty()){
+            int size = q.size();
+            for (int i = 0; i < size; i++) {
+                int[] pos = q.poll();
+                for (int[] dir:dirs) {
+                    int[] newPos = new int[]{
+                            pos[0] + dir[0],
+                            pos[1] + dir[1],
+                            pos[2] + 1
+                    };
+                    if(isValidIdx(newPos[0], newPos[1])){
+
+                        visited[newPos[0]][newPos[1]] = pos[2] + 1;
+                        q.add(newPos);
+                    }
+                }
+            }
+        }
+
+    }
+
+    private boolean isValidIdx(int row, int col){
+        return row >= 0 && row < visited.length &&
+                col >= 0 &&
+                col < visited[row].length &&
+                visited[row][col] == null;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
