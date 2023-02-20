@@ -1,9 +1,11 @@
 import leetcode.editor.en.Q1129.ShortestPathWithAlternatingColors;
+import leetcode.editor.en.Q1151.MinimumSwapsToGroupAll1sTogether;
 import leetcode.editor.en.Q1162.AsFarFromLandAsPossible;
 import leetcode.editor.en.Q1557.MinimumNumberOfVerticesToReachAllNodes;
 import leetcode.editor.en.Q2306.NamingACompany;
 import leetcode.editor.en.Q2477.MinimumFuelCostToReportToTheCapital;
 import leetcode.editor.en.Q297.SerializeAndDeserializeBinaryTree;
+import leetcode.editor.en.Q325.MaximumSizeSubarraySumEqualsK;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -18,7 +20,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println( new MinimumFuelCostToReportToTheCapital().minimumFuelCost(toIntMatrix("[[3,1],[3,2],[1,0],[0,4],[0,5],[4,6]]\n"),2));
+        System.out.println(new MinimumSwapsToGroupAll1sTogether().minSwaps(toIntArray("[1,0,1,0,1]")));
     }
 
 
