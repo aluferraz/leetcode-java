@@ -6,7 +6,10 @@ import leetcode.editor.en.Q1588.SumOfAllOddLengthSubarrays;
 import leetcode.editor.en.Q2306.NamingACompany;
 import leetcode.editor.en.Q2477.MinimumFuelCostToReportToTheCapital;
 import leetcode.editor.en.Q297.SerializeAndDeserializeBinaryTree;
+import leetcode.editor.en.Q305.NumberOfIslandsIi;
 import leetcode.editor.en.Q325.MaximumSizeSubarraySumEqualsK;
+import leetcode.editor.en.Q448.FindAllNumbersDisappearedInAnArray;
+import leetcode.editor.en.Q540.SingleElementInASortedArray;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -21,7 +24,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new SumOfAllOddLengthSubarrays().sumOddLengthSubarrays(toIntArray("[1,4,2,5,3]\n")));
+        System.out.println(new NumberOfIslandsIi().numIslands2(8, 4, toIntMatrix("[[0,0],[7,1],[6,1],[3,3],[4,1]]\n")));
     }
 
 
