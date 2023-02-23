@@ -1,3 +1,4 @@
+import leetcode.editor.en.Q1011.CapacityToShipPackagesWithinDDays;
 import leetcode.editor.en.Q1129.ShortestPathWithAlternatingColors;
 import leetcode.editor.en.Q1151.MinimumSwapsToGroupAll1sTogether;
 import leetcode.editor.en.Q1162.AsFarFromLandAsPossible;
@@ -24,7 +25,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new NumberOfIslandsIi().numIslands2(8, 4, toIntMatrix("[[0,0],[7,1],[6,1],[3,3],[4,1]]\n")));
+        System.out.println(new CapacityToShipPackagesWithinDDays().shipWithinDays(toIntArray("[1,2,3,4,5,6,7,8,9,10]"), 5));
     }
 
 
@@ -39,6 +40,21 @@ public class Main {
         String[] result = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
             result[i] = jsonArray.getString(i);
+        }
+        return result;
+    }
+
+    private static int[] toIntArrayFromFile() {
+        String resourceName = "testcase.txt";
+        InputStream is = Main.class.getResourceAsStream(resourceName);
+        if (is == null) {
+            throw new NullPointerException("Cannot find resource file " + resourceName);
+        }
+        JSONTokener tokener = new JSONTokener(is);
+        JSONArray jsonArray = new JSONArray(tokener);
+        int[] result = new int[jsonArray.length()];
+        for (int i = 0; i < jsonArray.length(); i++) {
+            result[i] = jsonArray.getInt(i);
         }
         return result;
     }

@@ -1,5 +1,7 @@
 package leetcode.editor.en.Q1011;
+
 import java.util.*;
+
 import javafx.util.Pair;
 
 //A conveyor belt has packages that must be shipped from one port to another 
@@ -68,12 +70,43 @@ import javafx.util.Pair;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+
+
     public int shipWithinDays(int[] weights, int days) {
-        
+
+        int left = 1; // min
+        int right = Arrays.stream(weights).sum() + 1; // max
+        while (left < right) {
+            int mid = Math.floorDiv((left + right), 2);
+            if (validCapacity(mid, days, weights)) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+
+        }
+        return left;
     }
+
+    private boolean validCapacity(int max, int days, int[] weights) {
+        int daysUsed = 1;
+        int capacity = max;
+        for (int weight : weights) {
+            if (weight > capacity) {
+                capacity = max;
+                daysUsed++;
+                if (daysUsed > days) return false;
+            }
+            if (weight > capacity) return false;
+            capacity -= weight;
+        }
+        return true;
+    }
+
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
 
-
-public class CapacityToShipPackagesWithinDDays extends Solution {}
+public class CapacityToShipPackagesWithinDDays extends Solution {
+}
