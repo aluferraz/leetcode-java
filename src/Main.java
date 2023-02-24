@@ -10,6 +10,7 @@ import leetcode.editor.en.Q297.SerializeAndDeserializeBinaryTree;
 import leetcode.editor.en.Q305.NumberOfIslandsIi;
 import leetcode.editor.en.Q325.MaximumSizeSubarraySumEqualsK;
 import leetcode.editor.en.Q448.FindAllNumbersDisappearedInAnArray;
+import leetcode.editor.en.Q502.Ipo;
 import leetcode.editor.en.Q540.SingleElementInASortedArray;
 import org.json.JSONArray;
 import org.json.JSONTokener;
@@ -25,7 +26,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new CapacityToShipPackagesWithinDDays().shipWithinDays(toIntArray("[1,2,3,4,5,6,7,8,9,10]"), 5));
+        System.out.println(new Ipo().findMaximizedCapital(
+                2, 0, toIntArray("[1,2,3]"), toIntArray("[0,1,1]")
+        ));
     }
 
 
