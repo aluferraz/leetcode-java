@@ -1,29 +1,10 @@
-import leetcode.editor.en.Q1011.CapacityToShipPackagesWithinDDays;
-import leetcode.editor.en.Q1129.ShortestPathWithAlternatingColors;
-import leetcode.editor.en.Q1151.MinimumSwapsToGroupAll1sTogether;
-import leetcode.editor.en.Q1162.AsFarFromLandAsPossible;
-import leetcode.editor.en.Q1557.MinimumNumberOfVerticesToReachAllNodes;
-import leetcode.editor.en.Q1588.SumOfAllOddLengthSubarrays;
-import leetcode.editor.en.Q1675.MinimizeDeviationInArray;
-import leetcode.editor.en.Q214.ShortestPalindrome;
-import leetcode.editor.en.Q2306.NamingACompany;
-import leetcode.editor.en.Q2477.MinimumFuelCostToReportToTheCapital;
-import leetcode.editor.en.Q297.SerializeAndDeserializeBinaryTree;
-import leetcode.editor.en.Q305.NumberOfIslandsIi;
-import leetcode.editor.en.Q325.MaximumSizeSubarraySumEqualsK;
-import leetcode.editor.en.Q448.FindAllNumbersDisappearedInAnArray;
-import leetcode.editor.en.Q502.Ipo;
-import leetcode.editor.en.Q540.SingleElementInASortedArray;
+import leetcode.editor.en.Q427.ConstructQuadTree;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -31,7 +12,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 //        System.out.println(new ShortestPalindrome().shortestPalindrome(  new String(Files.readAllBytes(Paths.get( "src/testcase.txt"))) ));
-        System.out.println(new ShortestPalindrome().shortestPalindrome(  "aacecaaa" ));
+        System.out.println(new ConstructQuadTree().construct(toIntMatrix("[[1,1,0,0],[0,0,1,1],[1,1,0,0],[0,0,1,1]]\n")));
     }
 
 
