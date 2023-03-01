@@ -55,9 +55,40 @@ import javafx.util.Pair;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean isMatch(String s, String p) {
-        return true;
-    }
 
+        boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
+        dp[0][0] = "" == ""; //Base case
+        boolean patternForEmpty = true;
+        //The only way for an empty string match a pattern is if the pattern contains only '*'
+        for (int i = 1; i <= p.length(); i++) {
+            if (patternForEmpty && p.charAt(i - 1) == '*') {
+                dp[0][i] = true;
+            } else {
+                dp[0][i] = false;
+                patternForEmpty = false;
+            }
+        }
+
+        //Compare anything to the pattern "" will be false, except for the base-case [0][0]
+        for (int i = 1; i <= s.length(); i++) {
+            dp[i][0] = false;
+        }
+
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = 1; j <= p.length(); j++) {
+                if (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '?') {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else if (p.charAt(j - 1) == '*') {
+                    dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
+                } else {
+                    dp[i][j] = false;
+                }
+            }
+        }
+
+        return dp[s.length()][p.length()];
+
+    }
 
 }
 //leetcode submit region end(Prohibit modification and deletion)
