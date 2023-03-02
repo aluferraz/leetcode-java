@@ -1,7 +1,9 @@
 import leetcode.editor.en.Q281.ZigzagIterator;
+import leetcode.editor.en.Q402.RemoveKDigits;
 import leetcode.editor.en.Q427.ConstructQuadTree;
 import leetcode.editor.en.Q44.WildcardMatching;
 import leetcode.editor.en.Q652.FindDuplicateSubtrees;
+import leetcode.editor.en.Q912.SortAnArray;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -14,12 +16,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-//        System.out.println(new ShortestPalindrome().shortestPalindrome(  new String(Files.readAllBytes(Paths.get( "src/testcase.txt"))) ));
+        System.out.println(new RemoveKDigits().removeKdigits("112", 1));
 
-        ZigzagIterator i = new ZigzagIterator(List.of(1, 2), List.of(3, 4, 5, 6));
-        while (i.hasNext()) {
-            System.out.println(i.next());
-        }
     }
 
 
