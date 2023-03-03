@@ -50,7 +50,33 @@ import javafx.util.Pair;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public String removeKdigits(String num, int k) {
+        LinkedList<Integer> stack = new LinkedList<>();
+        HashSet<Integer> toRemove = new HashSet<>();
+        for (int i = 0; i < num.length() && k > 0; i++) {
+            int cDigit = Character.getNumericValue(num.charAt(i));
+            while (!stack.isEmpty() && k > 0 && cDigit < Character.getNumericValue(num.charAt(stack.peekLast()))) {
+                k--;
+                toRemove.add(stack.pollLast());
+            }
+            stack.add(i);
+        }
+        StringBuilder res = new StringBuilder();
+        for (int i = 0; i < num.length(); i++) {
+            if (!toRemove.contains(i)) {
+                if (res.length() == 0 && num.charAt(i) == '0') continue;
+                res.append(num.charAt(i));
+            }
+        }
+        while (k > 0 && res.length() > 0) {
+            res.deleteCharAt(res.length() - 1);
+            k--;
+        }
+
+        if (res.length() == 0) res.append(0);
+        return res.toString();
     }
+
+
 }
 
 

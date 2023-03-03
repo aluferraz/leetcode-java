@@ -2,6 +2,8 @@ import leetcode.editor.en.Q281.ZigzagIterator;
 import leetcode.editor.en.Q402.RemoveKDigits;
 import leetcode.editor.en.Q427.ConstructQuadTree;
 import leetcode.editor.en.Q44.WildcardMatching;
+import leetcode.editor.en.Q443.StringCompression;
+import leetcode.editor.en.Q456.One32Pattern;
 import leetcode.editor.en.Q652.FindDuplicateSubtrees;
 import leetcode.editor.en.Q912.SortAnArray;
 import org.json.JSONArray;
@@ -16,7 +18,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new RemoveKDigits().removeKdigits("112", 1));
+        System.out.println(new One32Pattern().find132pattern(toIntArray("[3,1,4,2]\n")));
 
     }
 
@@ -74,6 +76,16 @@ public class Main {
         String[] result = new String[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
             result[i] = jsonArray.getString(i);
+        }
+        return result;
+    }
+
+
+    private static char[] toCharArray(String s) {
+        JSONArray jsonArray = new JSONArray(s);
+        char[] result = new char[jsonArray.length()];
+        for (int i = 0; i < jsonArray.length(); i++) {
+            result[i] = jsonArray.getString(i).charAt(0);
         }
         return result;
     }
