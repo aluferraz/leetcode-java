@@ -38,27 +38,45 @@ import javafx.util.Pair;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int shortestSubarray(int[] nums, int k) {
-
-        TreeMap<Integer, Integer> firstIndex = new TreeMap<>();
-
-
+        // This is not optimal, should use deque https://www.youtube.com/watch?v=K0NgGYEAkA4
         int res = Integer.MAX_VALUE;
         int sum = 0;
         int left = 0;
+        TreeMap<Integer, Integer> seen = new TreeMap<>();
 
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[0] >= k) return 1;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] >= k) return 1;
+            //the sum is way too negative, it is better to start over because K is always positive .
             if (nums[i] > (sum + nums[i])) {
-                //K is positive always.
                 sum = 0;
                 left = i;
+                seen.clear();
+            }
+            sum += nums[i];
+            seen.put(sum, i);
+            if (sum >= k) {
+                int canRemove = sum - k;
+                Integer prev = seen.floorKey(canRemove);
+
+                int minRange = left - 1;
+
+                while (prev != null) {
+                    minRange = Math.max(minRange, seen.get(prev));
+                    seen.remove(prev);
+                    prev = seen.floorKey(canRemove);
+                }
+
+
+//                int minRange = binarySearchMinRange(left, i, presum, k);
+                res = Math.min(i - minRange, res);
+
             }
 
 
         }
         return res == Integer.MAX_VALUE ? -1 : res;
     }
-
 
 }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -1,15 +1,4 @@
-import leetcode.editor.en.Q214.ShortestPalindrome;
-import leetcode.editor.en.Q2444.CountSubarraysWithFixedBounds;
-import leetcode.editor.en.Q281.ZigzagIterator;
-import leetcode.editor.en.Q402.RemoveKDigits;
-import leetcode.editor.en.Q427.ConstructQuadTree;
-import leetcode.editor.en.Q44.WildcardMatching;
-import leetcode.editor.en.Q443.StringCompression;
-import leetcode.editor.en.Q456.One32Pattern;
-import leetcode.editor.en.Q652.FindDuplicateSubtrees;
-import leetcode.editor.en.Q84.LargestRectangleInHistogram;
 import leetcode.editor.en.Q862.ShortestSubarrayWithSumAtLeastK;
-import leetcode.editor.en.Q912.SortAnArray;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -22,9 +11,11 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-//        System.out.println(new ShortestSubarrayWithSumAtLeastK().shortestSubarray(toIntArray("[1,-100000,-100000,1,-1,1,1,-1,-100000]\n"),2));
-        System.out.println(new ShortestSubarrayWithSumAtLeastK().shortestSubarray(toIntArray("[-10,36,13,93,41,-10,78,91,34,-47,-17,37,41,70,44,23,23,42,70,8]\n\n\n"),207));
-//        System.out.println(new CountSubarraysWithFixedBounds().countSubarrays(toIntArray("[1,1,1,1]\n"), 1, 1));
+//        System.out.println(new ShortestSubarrayWithSumAtLeastK().shortestSubarray(toIntArray("[-34,37,51,3,-12,-50,51,100,-47,99,34,14,-13,89,31,-14,-44,23,-38,6]\n"),151));
+        System.out.println(new ShortestSubarrayWithSumAtLeastK().shortestSubarray(toIntArray("[56,-21,56,35,-9]\n"),61));
+//        System.out.println(new ShortestSubarrayWithSumAtLeastK().shortestSubarray(toIntArray("[-10,36,13,93,41,-10,78,91,34,-47,-17,37,41,70,44,23,23,42,70,8]\n\n\n"),207));
+//        System.out.println(new ShortestSubarrayWithSumAtLeastK().shortestSubarray(toIntArray("[-34,37,51,3,-12,-50,51,100,-47,99,34,14,-13,89,31,-14,-44,23,-38,6]\n"),151));
+
 
     }
 
