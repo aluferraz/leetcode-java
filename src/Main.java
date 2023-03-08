@@ -1,4 +1,6 @@
 import leetcode.editor.en.Q1065.IndexPairsOfAString;
+import leetcode.editor.en.Q1150.CheckIfANumberIsMajorityElementInASortedArray;
+import leetcode.editor.en.Q2187.MinimumTimeToCompleteTrips;
 import leetcode.editor.en.Q862.ShortestSubarrayWithSumAtLeastK;
 import org.json.JSONArray;
 import org.json.JSONTokener;
@@ -12,8 +14,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        new IndexPairsOfAString().indexPairs("baabaaaaaa"
-                , toStringArray("[\"b\",\"a\",\"ba\",\"bb\",\"aa\"]"));
+        System.out.println(new CheckIfANumberIsMajorityElementInASortedArray().isMajorityElement(toIntArray("[4,4,4,4,5,5,6,6,6]\n"), 5));
 
 
     }
