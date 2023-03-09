@@ -1,7 +1,9 @@
 import leetcode.editor.en.Q1065.IndexPairsOfAString;
 import leetcode.editor.en.Q1150.CheckIfANumberIsMajorityElementInASortedArray;
 import leetcode.editor.en.Q2187.MinimumTimeToCompleteTrips;
+import leetcode.editor.en.Q261.GraphValidTree;
 import leetcode.editor.en.Q862.ShortestSubarrayWithSumAtLeastK;
+import leetcode.editor.en.Q875.KokoEatingBananas;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -14,8 +16,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new CheckIfANumberIsMajorityElementInASortedArray().isMajorityElement(toIntArray("[4,4,4,4,5,5,6,6,6]\n"), 5));
-
+        System.out.println(new GraphValidTree().validTree(5, toIntMatrix("[[0,1],[0,2],[0,3],[1,4]]")));
 
     }
 
