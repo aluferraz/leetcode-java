@@ -1,5 +1,7 @@
 package leetcode.editor.en.Q990;
+
 import java.util.*;
+
 import javafx.util.Pair;
 
 //You are given an array of strings equations that represent relationships 
@@ -47,11 +49,55 @@ import javafx.util.Pair;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean equationsPossible(String[] equations) {
-        
+        int[] equalities = new int[26];
+
+        Arrays.fill(equalities, -1);
+
+        for (String equation : equations) {
+            if (equation.indexOf("==") != -1) {
+                int fistLetter = equation.charAt(0) - 'a';
+                int lastLetter = equation.charAt(equation.length() - 1) - 'a';
+
+                int rootFirstLetter = find(fistLetter, equalities);
+                int rootLastLetter = find(lastLetter, equalities);
+
+                union(rootFirstLetter, rootLastLetter, equalities);
+            }
+        }
+        for (String equation : equations) {
+
+            if (equation.indexOf("!=") != -1) {
+                int fistLetter = equation.charAt(0) - 'a';
+                int lastLetter = equation.charAt(equation.length() - 1) - 'a';
+                int rootFirstLetter = find(fistLetter, equalities);
+                int rootLastLetter = find(lastLetter, equalities);
+                if (rootFirstLetter == rootLastLetter) return false;
+            }
+        }
+
+        return true;
+    }
+
+    private int find(int i, int[] parents) {
+        while (parents[i] >= 0) {
+            i = parents[i];
+        }
+        return i;
+    }
+
+    private void union(int i, int j, int[] parents) {
+        if (i == j) return;
+        if (parents[j] < parents[i]) {
+            union(j, i, parents);
+            return;
+        }
+        parents[j] += parents[i];
+        parents[i] = j;
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
 
-
-public class SatisfiabilityOfEqualityEquations extends Solution {}
+public class SatisfiabilityOfEqualityEquations extends Solution {
+}

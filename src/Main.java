@@ -4,6 +4,7 @@ import leetcode.editor.en.Q2187.MinimumTimeToCompleteTrips;
 import leetcode.editor.en.Q261.GraphValidTree;
 import leetcode.editor.en.Q862.ShortestSubarrayWithSumAtLeastK;
 import leetcode.editor.en.Q875.KokoEatingBananas;
+import leetcode.editor.en.Q990.SatisfiabilityOfEqualityEquations;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -16,7 +17,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new GraphValidTree().validTree(5, toIntMatrix("[[0,1],[0,2],[0,3],[1,4]]")));
+        System.out.println(new SatisfiabilityOfEqualityEquations().equationsPossible(toStringArray("[\"a==b\",\"b!=c\",\"c==a\"]")));
 
     }
 
