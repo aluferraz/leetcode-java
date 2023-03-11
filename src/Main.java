@@ -1,5 +1,6 @@
 import leetcode.editor.en.Q1065.IndexPairsOfAString;
 import leetcode.editor.en.Q1150.CheckIfANumberIsMajorityElementInASortedArray;
+import leetcode.editor.en.Q1579.RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable;
 import leetcode.editor.en.Q2187.MinimumTimeToCompleteTrips;
 import leetcode.editor.en.Q261.GraphValidTree;
 import leetcode.editor.en.Q862.ShortestSubarrayWithSumAtLeastK;
@@ -17,7 +18,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new SatisfiabilityOfEqualityEquations().equationsPossible(toStringArray("[\"a==b\",\"b!=c\",\"c==a\"]")));
+        System.out.println(new RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable().maxNumEdgesToRemove(4,toIntMatrix("[[3,1,2],[3,2,3],[1,1,3],[1,2,4],[1,1,2],[2,3,4]]")));
 
     }
 
