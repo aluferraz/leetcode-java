@@ -1,9 +1,9 @@
 package leetcode.editor.en.Q1579;
 
-import java.time.temporal.TemporalAccessor;
-import java.util.*;
-
 import javafx.util.Pair;
+
+import javax.swing.*;
+import java.util.*;
 
 //Alice and Bob have an undirected graph of n nodes and three types of edges: 
 //
@@ -76,117 +76,92 @@ import javafx.util.Pair;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    private static final int ALICE = 1;
-    private static final int BOB = 2;
-    private static final int BOTH = 3;
-
-
-
     public int maxNumEdgesToRemove(int n, int[][] edges) {
+        // Different objects for Alice and Bob.
+        UnionFind Alice = new UnionFind(n);
+        UnionFind Bob = new UnionFind(n);
 
-        HashMap<Integer, HashMap<Integer, ArrayList<Integer>>> paths = new HashMap<>();
+        int edgesRequired = 0;
+        // Perform union for edges of type = 3, for both Alice and Bob.
         for (int[] edge : edges) {
-            int type = edge[0];
-            HashMap<Integer, ArrayList<Integer>> target = paths.getOrDefault(type, new HashMap<>());
-            makeAdjacentList(edge, target);
-            paths.put(type, target);
-
-        }
-
-        //Check if path exists
-        int[] visit = new int[n + 1];
-        if (!dfs(1,
-                visit,
-                paths.getOrDefault(ALICE, new HashMap<>()),
-                paths.getOrDefault(BOTH, new HashMap<>()),
-                n
-        )) return -1;
-
-        visit = new int[n + 1];
-        if (!dfs(1,
-                visit,
-                paths.getOrDefault(BOB, new HashMap<>()),
-                paths.getOrDefault(BOTH, new HashMap<>()),
-                n
-        )) return -1;
-
-
-        //Delete backnodes of each list individually
-        int[] arrivalTimes = new int[n + 1];
-        int aliceRemovals = countBackNodes(-1, 1, 0, arrivalTimes, paths.get(ALICE));
-        arrivalTimes = new int[n + 1];
-        int bobRemovals = countBackNodes(-1, 1, 0, arrivalTimes, paths.get(BOB));
-        arrivalTimes = new int[n + 1];
-        int bothRemovals = countBackNodes(-1, 1, 0, arrivalTimes, paths.get(BOTH));
-
-
-        //Now there are no backnodes, which means that from 1 to n there is only one path
-        //We must se were bob and alice paths overlaps
-        //To graph will need (n-1) edges to be fully connected + overlapping nodes of alice and bob
-
-        int overlaps = 0;
-
-        return edges.length - ( (n-1) + overlaps );
-    }
-
-    private boolean dfs(int i,
-                        int[] visit,
-                        HashMap<Integer, ArrayList<Integer>> edges1,
-                        HashMap<Integer, ArrayList<Integer>> edges2,
-                        int target) {
-        if (i == target) {
-            return true;
-        }
-        if (!edges1.containsKey(i) && !edges2.containsKey(i)) return false;
-        visit[i] = 1; //visiting
-        ArrayList<Integer> neighbors = edges1.getOrDefault(i, new ArrayList<>());
-        for (int neighbor : neighbors) {
-            if (visit[neighbor] != 0) continue;
-            if (dfs(neighbor, visit, edges1, edges2, target)) return true;
-        }
-        neighbors = edges2.getOrDefault(i, new ArrayList<>());
-
-        for (int neighbor : neighbors) {
-            if (visit[neighbor] != 0) continue;
-            if (dfs(neighbor, visit, edges1, edges2, target)) return true;
-        }
-        visit[i] = 2; //visited
-        return false;
-
-    }
-
-
-    private int countBackNodes(int parent, int i, int time, int[] arrivalTimes, HashMap<Integer, ArrayList<Integer>> edges) {
-        int res = 0;
-        int currentNodeTime = time + 1;
-        arrivalTimes[i] = currentNodeTime;
-        if (!edges.containsKey(i)) return res;
-        ArrayList<Integer> neighbors = edges.get(i);
-
-        for (int neighbor : neighbors) {
-            if (neighbor == parent) continue;
-            if (arrivalTimes[neighbor] > 0 && arrivalTimes[neighbor] < currentNodeTime) {
-                //Found a back node
-                res++;
+            if (edge[0] == 3) {
+                edgesRequired += (Alice.performUnion(edge[1], edge[2]) | Bob.performUnion(edge[1], edge[2]));
             }
-            res += countBackNodes(i, neighbor, currentNodeTime, arrivalTimes, edges);
         }
-        return res;
+
+        // Perform union for Alice if type = 1 and for Bob if type = 2.
+        for (int[] edge : edges) {
+            if (edge[0] == 1) {
+                edgesRequired += Alice.performUnion(edge[1], edge[2]);
+            } else if (edge[0] == 2) {
+                edgesRequired += Bob.performUnion(edge[1], edge[2]);
+            }
+        }
+
+        // Check if the Graphs for Alice and Bob have n - 1 edges or is a single component.
+        if (Alice.isConnected() && Bob.isConnected()) {
+            return edges.length - edgesRequired;
+        }
+
+        return -1;
     }
 
-    private void makeAdjacentList(int[] edge, HashMap<Integer, ArrayList<Integer>> adjList) {
+    private class UnionFind {
+        int[] representative;
+        int[] componentSize;
+        // Number of distinct components in the graph.
+        int components;
 
-        int from = edge[1];
-        int to = edge[2];
-        ArrayList<Integer> connections = adjList.getOrDefault(from, new ArrayList<>());
-        connections.add(to);
-        adjList.put(from, connections);
+        // Initialize the list representative and componentSize
+        // Each node is representative of itself with size 1.
+        public UnionFind(int n) {
+            components = n;
+            representative = new int[n + 1];
+            componentSize = new int[n + 1];
 
-        connections = adjList.getOrDefault(to, new ArrayList<>());
-        connections.add(from);
-        adjList.put(to, connections);
+            for (int i = 0; i <= n; i++) {
+                representative[i] = i;
+                componentSize[i] = 1;
+            }
+        }
+
+        // Get the root of a node.
+        int findRepresentative(int x) {
+            if (representative[x] == x) {
+                return x;
+            }
+
+            // Path compression.
+            return representative[x] = findRepresentative(representative[x]);
+        }
+
+        // Perform the union of two components that belongs to node x and node y.
+        int performUnion(int x, int y) {
+            x = findRepresentative(x); y = findRepresentative(y);
+
+            if (x == y) {
+                return 0;
+            }
+
+            if (componentSize[x] > componentSize[y]) {
+                componentSize[x] += componentSize[y];
+                representative[y] = x;
+            } else {
+                componentSize[y] += componentSize[x];
+                representative[x] = y;
+            }
+
+            components--;
+            return 1;
+        }
+
+        // Returns true if all nodes get merged to one.
+        boolean isConnected() {
+            return components == 1;
+        }
     }
 }
+
 //leetcode submit region end(Prohibit modification and deletion)
 
 
