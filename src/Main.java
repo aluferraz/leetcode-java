@@ -2,6 +2,7 @@ import leetcode.editor.en.Q1065.IndexPairsOfAString;
 import leetcode.editor.en.Q1150.CheckIfANumberIsMajorityElementInASortedArray;
 import leetcode.editor.en.Q1579.RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable;
 import leetcode.editor.en.Q2187.MinimumTimeToCompleteTrips;
+import leetcode.editor.en.Q253.MeetingRoomsIi;
 import leetcode.editor.en.Q261.GraphValidTree;
 import leetcode.editor.en.Q862.ShortestSubarrayWithSumAtLeastK;
 import leetcode.editor.en.Q875.KokoEatingBananas;
@@ -18,7 +19,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable().maxNumEdgesToRemove(4,toIntMatrix("[[3,1,2],[3,2,3],[1,1,3],[1,2,4],[1,1,2],[2,3,4]]")));
+        System.out.println(new MeetingRoomsIi().minMeetingRooms(toIntMatrix("[[0,30],[5,10],[15,20]]")));
 
     }
 
