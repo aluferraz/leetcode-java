@@ -1,9 +1,11 @@
 import leetcode.editor.en.Q1065.IndexPairsOfAString;
 import leetcode.editor.en.Q1150.CheckIfANumberIsMajorityElementInASortedArray;
 import leetcode.editor.en.Q1579.RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable;
+import leetcode.editor.en.Q1933.CheckIfStringIsDecomposableIntoValueEqualSubstrings;
 import leetcode.editor.en.Q2187.MinimumTimeToCompleteTrips;
 import leetcode.editor.en.Q253.MeetingRoomsIi;
 import leetcode.editor.en.Q261.GraphValidTree;
+import leetcode.editor.en.Q378.KthSmallestElementInASortedMatrix;
 import leetcode.editor.en.Q862.ShortestSubarrayWithSumAtLeastK;
 import leetcode.editor.en.Q875.KokoEatingBananas;
 import leetcode.editor.en.Q990.SatisfiabilityOfEqualityEquations;
@@ -19,7 +21,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new MeetingRoomsIi().minMeetingRooms(toIntMatrix("[[0,30],[5,10],[15,20]]")));
+        System.out.println(new CheckIfStringIsDecomposableIntoValueEqualSubstrings().isDecomposable("21"));
 
     }
 
