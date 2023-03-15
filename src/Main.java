@@ -5,6 +5,7 @@ import leetcode.editor.en.Q1933.CheckIfStringIsDecomposableIntoValueEqualSubstri
 import leetcode.editor.en.Q2187.MinimumTimeToCompleteTrips;
 import leetcode.editor.en.Q253.MeetingRoomsIi;
 import leetcode.editor.en.Q261.GraphValidTree;
+import leetcode.editor.en.Q358.RearrangeStringKDistanceApart;
 import leetcode.editor.en.Q378.KthSmallestElementInASortedMatrix;
 import leetcode.editor.en.Q862.ShortestSubarrayWithSumAtLeastK;
 import leetcode.editor.en.Q875.KokoEatingBananas;
@@ -21,7 +22,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new CheckIfStringIsDecomposableIntoValueEqualSubstrings().isDecomposable("21"));
+        System.out.println(new RearrangeStringKDistanceApart().rearrangeString("abeabac",3));
 
     }
 
