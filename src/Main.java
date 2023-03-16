@@ -1,7 +1,9 @@
 import leetcode.editor.en.Q1065.IndexPairsOfAString;
 import leetcode.editor.en.Q1150.CheckIfANumberIsMajorityElementInASortedArray;
 import leetcode.editor.en.Q1579.RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable;
+import leetcode.editor.en.Q1606.FindServersThatHandledMostNumberOfRequests;
 import leetcode.editor.en.Q1933.CheckIfStringIsDecomposableIntoValueEqualSubstrings;
+import leetcode.editor.en.Q218.TheSkylineProblem;
 import leetcode.editor.en.Q2187.MinimumTimeToCompleteTrips;
 import leetcode.editor.en.Q253.MeetingRoomsIi;
 import leetcode.editor.en.Q261.GraphValidTree;
@@ -22,13 +24,20 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new RearrangeStringKDistanceApart().rearrangeString("abeabac",3));
+        System.out.println(new FindServersThatHandledMostNumberOfRequests().busiestServers(
+                3, toIntArray("[1, 2, 3, 4, 8, 9, 10]"), toIntArray("[5, 2, 10, 3, 1, 2, 2]")
+
+
+//                32820,
+//                toIntArrayFromFile("testcase.txt"),
+//                toIntArrayFromFile("testcase2.txt")
+        ));
 
     }
 
 
-    private static String[] toStringArrayFromFile() {
-        String resourceName = "testcase.txt";
+    private static String[] toStringArrayFromFile(String resourceName) {
+        //String resourceName = "testcase.txt";
         InputStream is = Main.class.getResourceAsStream(resourceName);
         if (is == null) {
             throw new NullPointerException("Cannot find resource file " + resourceName);
@@ -42,8 +51,8 @@ public class Main {
         return result;
     }
 
-    private static int[] toIntArrayFromFile() {
-        String resourceName = "testcase.txt";
+    private static int[] toIntArrayFromFile(String resourceName) {
+        //String resourceName = "testcase.txt";
         InputStream is = Main.class.getResourceAsStream(resourceName);
         if (is == null) {
             throw new NullPointerException("Cannot find resource file " + resourceName);

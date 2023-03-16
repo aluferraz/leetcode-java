@@ -1,5 +1,7 @@
 package leetcode.editor.en.Q218;
+
 import java.util.*;
+
 import javafx.util.Pair;
 
 //A city's skyline is the outer contour of the silhouette formed by all the 
@@ -65,12 +67,88 @@ import javafx.util.Pair;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+    private static final int START = -1;
+    private static final int END = 1;
+
     public List<List<Integer>> getSkyline(int[][] buildings) {
-        
+        LinkedList<int[]> timeline = new LinkedList<>();
+
+        for (int[] building : buildings) {
+            timeline.add(new int[]{building[0], building[2], START});
+            timeline.add(new int[]{building[1], building[2], END});
+        }
+
+
+        Collections.sort(timeline, (a, b) -> {
+            if (a[0] == b[0]) {
+                if (a[1] == b[1]) {
+                    return Integer.compare(a[2], b[2]);
+                }
+                return Integer.compare(a[1], b[1]);
+            }
+            return Integer.compare(a[0], b[0]);
+        });
+
+
+        LinkedList<List<Integer>> resWithDuplicates = new LinkedList<>();
+        TreeMap<Integer, Integer> heights = new TreeMap<>();
+        resWithDuplicates.add(Arrays.asList(-1, -1));
+
+        int state = 0;
+
+        for (int[] event : timeline) {
+            int eventType = event[2];
+            int xPos = event[0];
+            int yPos = event[1];
+
+            state += eventType;
+            List<Integer> prevBuilding = resWithDuplicates.peekLast();
+//            int prevBuildingX = prevBuilding.get(0);
+            int prevBuildingY = prevBuilding.get(1);
+
+            if (eventType == START) {
+                heights.put(yPos, heights.getOrDefault(yPos, 0) + 1);
+                if (yPos > prevBuildingY) {
+                    resWithDuplicates.add(Arrays.asList(xPos, yPos));
+                }
+            }
+            if (eventType == END) {
+                int buildingsOnThatHeight = heights.get(yPos);
+                buildingsOnThatHeight--;
+                if (buildingsOnThatHeight == 0) heights.remove(yPos);
+                else heights.put(yPos, buildingsOnThatHeight);
+
+                if (state == 0) {
+                    resWithDuplicates.add(Arrays.asList(xPos, 0));
+                } else {
+                    int newHeight = heights.lastKey();
+                    if (newHeight < yPos) {
+                        resWithDuplicates.add(Arrays.asList(xPos, newHeight));
+                    }
+                }
+
+            }
+
+        }
+
+        resWithDuplicates.pollFirst();
+        LinkedList<List<Integer>> res = new LinkedList<>();
+
+        for (List<Integer> skyline : resWithDuplicates) {
+            while (!res.isEmpty() && res.peekLast().get(0).equals(skyline.get(0))) {
+                res.pollLast();
+            }
+            res.add(skyline);
+        }
+
+
+        return res;
+
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
 
-
-public class TheSkylineProblem extends Solution {}
+public class TheSkylineProblem extends Solution {
+}
