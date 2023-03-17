@@ -1,17 +1,5 @@
-import leetcode.editor.en.Q1065.IndexPairsOfAString;
-import leetcode.editor.en.Q1150.CheckIfANumberIsMajorityElementInASortedArray;
-import leetcode.editor.en.Q1579.RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable;
+import leetcode.editor.en.Q106.ConstructBinaryTreeFromInorderAndPostorderTraversal;
 import leetcode.editor.en.Q1606.FindServersThatHandledMostNumberOfRequests;
-import leetcode.editor.en.Q1933.CheckIfStringIsDecomposableIntoValueEqualSubstrings;
-import leetcode.editor.en.Q218.TheSkylineProblem;
-import leetcode.editor.en.Q2187.MinimumTimeToCompleteTrips;
-import leetcode.editor.en.Q253.MeetingRoomsIi;
-import leetcode.editor.en.Q261.GraphValidTree;
-import leetcode.editor.en.Q358.RearrangeStringKDistanceApart;
-import leetcode.editor.en.Q378.KthSmallestElementInASortedMatrix;
-import leetcode.editor.en.Q862.ShortestSubarrayWithSumAtLeastK;
-import leetcode.editor.en.Q875.KokoEatingBananas;
-import leetcode.editor.en.Q990.SatisfiabilityOfEqualityEquations;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -24,14 +12,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new FindServersThatHandledMostNumberOfRequests().busiestServers(
-                3, toIntArray("[1, 2, 3, 4, 8, 9, 10]"), toIntArray("[5, 2, 10, 3, 1, 2, 2]")
-
-
-//                32820,
-//                toIntArrayFromFile("testcase.txt"),
-//                toIntArrayFromFile("testcase2.txt")
-        ));
+        System.out.println(new ConstructBinaryTreeFromInorderAndPostorderTraversal().buildTree(toIntArray("[2,3,1]"), toIntArray("[3,2,1]")));
 
     }
 
