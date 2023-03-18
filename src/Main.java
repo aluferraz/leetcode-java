@@ -1,5 +1,5 @@
-import leetcode.editor.en.Q106.ConstructBinaryTreeFromInorderAndPostorderTraversal;
-import leetcode.editor.en.Q1606.FindServersThatHandledMostNumberOfRequests;
+import leetcode.editor.en.Q1858.LongestWordWithAllPrefixes;
+import leetcode.editor.en.Q211.DesignAddAndSearchWordsDataStructure;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -12,8 +12,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new ConstructBinaryTreeFromInorderAndPostorderTraversal().buildTree(toIntArray("[2,3,1]"), toIntArray("[3,2,1]")));
-
+        System.out.println(new LongestWordWithAllPrefixes().longestWord(toStringArray("[\"k\",\"ki\",\"kir\",\"kira\", \"kiran\"]")));
     }
 
 
