@@ -1,5 +1,8 @@
+import leetcode.editor.en.Q1472.DesignBrowserHistory;
 import leetcode.editor.en.Q1858.LongestWordWithAllPrefixes;
 import leetcode.editor.en.Q211.DesignAddAndSearchWordsDataStructure;
+import leetcode.editor.en.Q2243.CalculateDigitSumOfAString;
+import leetcode.editor.en.Q336.PalindromePairs;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -12,7 +15,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new LongestWordWithAllPrefixes().longestWord(toStringArray("[\"k\",\"ki\",\"kir\",\"kira\", \"kiran\"]")));
+        System.out.println(new CalculateDigitSumOfAString().digitSum("11111222223", 3));
     }
 
 
