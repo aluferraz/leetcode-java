@@ -1,8 +1,11 @@
+import leetcode.editor.en.Q1217.MinimumCostToMoveChipsToTheSamePosition;
 import leetcode.editor.en.Q1472.DesignBrowserHistory;
 import leetcode.editor.en.Q1858.LongestWordWithAllPrefixes;
 import leetcode.editor.en.Q211.DesignAddAndSearchWordsDataStructure;
 import leetcode.editor.en.Q2243.CalculateDigitSumOfAString;
 import leetcode.editor.en.Q336.PalindromePairs;
+import leetcode.editor.en.Q605.CanPlaceFlowers;
+import leetcode.editor.en.Q896.MonotonicArray;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -15,7 +18,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new CalculateDigitSumOfAString().digitSum("11111222223", 3));
+        System.out.println(new CanPlaceFlowers().canPlaceFlowers(toIntArray("[1,0,0,0,1,0,0]"),2));
     }
 
 
