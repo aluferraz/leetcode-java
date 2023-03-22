@@ -1,10 +1,13 @@
 import leetcode.editor.en.Q1217.MinimumCostToMoveChipsToTheSamePosition;
 import leetcode.editor.en.Q1472.DesignBrowserHistory;
+import leetcode.editor.en.Q1584.MinCostToConnectAllPoints;
 import leetcode.editor.en.Q1858.LongestWordWithAllPrefixes;
 import leetcode.editor.en.Q211.DesignAddAndSearchWordsDataStructure;
 import leetcode.editor.en.Q2243.CalculateDigitSumOfAString;
+import leetcode.editor.en.Q2348.NumberOfZeroFilledSubarrays;
 import leetcode.editor.en.Q336.PalindromePairs;
 import leetcode.editor.en.Q605.CanPlaceFlowers;
+import leetcode.editor.en.Q721.AccountsMerge;
 import leetcode.editor.en.Q896.MonotonicArray;
 import org.json.JSONArray;
 import org.json.JSONTokener;
@@ -18,7 +21,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new CanPlaceFlowers().canPlaceFlowers(toIntArray("[1,0,0,0,1,0,0]"),2));
+        System.out.println(new MinCostToConnectAllPoints().minCostConnectPoints(toIntMatrix("[[0,0],[2,2],[3,10],[5,2],[7,0]]")));
     }
 
 
@@ -79,6 +82,31 @@ public class Main {
         return result;
     }
 
+    private static String[][] toStringMatrix(String s) {
+        JSONArray jsonArray = new JSONArray(s);
+        String[][] result = new String[jsonArray.length()][jsonArray.getJSONArray(0).length()];
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONArray row = jsonArray.getJSONArray(i);
+            for (int j = 0; j < row.length(); j++) {
+                result[i][j] = row.getString(j);
+            }
+        }
+        return result;
+    }
+
+    private static List<List<String>> toStringMatrixList(String s) {
+        JSONArray jsonArray = new JSONArray(s);
+        List<List<String>> result = new ArrayList<>();
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONArray row = jsonArray.getJSONArray(i);
+            List<String> resultRow = new ArrayList<>();
+            for (int j = 0; j < row.length(); j++) {
+                resultRow.add(row.getString(j));
+            }
+            result.add(resultRow);
+        }
+        return result;
+    }
 
     private static char[] toCharArray(String s) {
         JSONArray jsonArray = new JSONArray(s);
