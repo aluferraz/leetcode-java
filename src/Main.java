@@ -1,10 +1,13 @@
+import leetcode.editor.en.Q1048.LongestStringChain;
 import leetcode.editor.en.Q1217.MinimumCostToMoveChipsToTheSamePosition;
 import leetcode.editor.en.Q1472.DesignBrowserHistory;
 import leetcode.editor.en.Q1584.MinCostToConnectAllPoints;
 import leetcode.editor.en.Q1858.LongestWordWithAllPrefixes;
 import leetcode.editor.en.Q211.DesignAddAndSearchWordsDataStructure;
 import leetcode.editor.en.Q2243.CalculateDigitSumOfAString;
+import leetcode.editor.en.Q228.SummaryRanges;
 import leetcode.editor.en.Q2348.NumberOfZeroFilledSubarrays;
+import leetcode.editor.en.Q2492.MinimumScoreOfAPathBetweenTwoCities;
 import leetcode.editor.en.Q336.PalindromePairs;
 import leetcode.editor.en.Q605.CanPlaceFlowers;
 import leetcode.editor.en.Q721.AccountsMerge;
@@ -21,7 +24,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new MinCostToConnectAllPoints().minCostConnectPoints(toIntMatrix("[[0,0],[2,2],[3,10],[5,2],[7,0]]")));
+//        System.out.println(new LongestStringChain().longestStrChain(toStringArray("[\"xbc\",\"pcxbcf\",\"xb\",\"cxbc\",\"pcxbc\"]\n")));
+        System.out.println(new SummaryRanges().summaryRanges(toIntArray("[0,1,2,4,5,7]")));
     }
 
 
