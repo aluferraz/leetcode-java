@@ -1,5 +1,6 @@
 import leetcode.editor.en.Q1048.LongestStringChain;
 import leetcode.editor.en.Q1217.MinimumCostToMoveChipsToTheSamePosition;
+import leetcode.editor.en.Q1466.ReorderRoutesToMakeAllPathsLeadToTheCityZero;
 import leetcode.editor.en.Q1472.DesignBrowserHistory;
 import leetcode.editor.en.Q1584.MinCostToConnectAllPoints;
 import leetcode.editor.en.Q1858.LongestWordWithAllPrefixes;
@@ -25,7 +26,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 //        System.out.println(new LongestStringChain().longestStrChain(toStringArray("[\"xbc\",\"pcxbcf\",\"xb\",\"cxbc\",\"pcxbc\"]\n")));
-        System.out.println(new SummaryRanges().summaryRanges(toIntArray("[0,1,2,4,5,7]")));
+        System.out.println(new ReorderRoutesToMakeAllPathsLeadToTheCityZero().minReorder(6, toIntMatrix("[[0,1],[1,3],[2,3],[4,0],[4,5]]")));
     }
 
 
