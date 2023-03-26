@@ -7,6 +7,7 @@ import leetcode.editor.en.Q1858.LongestWordWithAllPrefixes;
 import leetcode.editor.en.Q211.DesignAddAndSearchWordsDataStructure;
 import leetcode.editor.en.Q2243.CalculateDigitSumOfAString;
 import leetcode.editor.en.Q228.SummaryRanges;
+import leetcode.editor.en.Q2316.CountUnreachablePairsOfNodesInAnUndirectedGraph;
 import leetcode.editor.en.Q2348.NumberOfZeroFilledSubarrays;
 import leetcode.editor.en.Q2492.MinimumScoreOfAPathBetweenTwoCities;
 import leetcode.editor.en.Q336.PalindromePairs;
@@ -26,7 +27,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 //        System.out.println(new LongestStringChain().longestStrChain(toStringArray("[\"xbc\",\"pcxbcf\",\"xb\",\"cxbc\",\"pcxbc\"]\n")));
-        System.out.println(new ReorderRoutesToMakeAllPathsLeadToTheCityZero().minReorder(6, toIntMatrix("[[0,1],[1,3],[2,3],[4,0],[4,5]]")));
+        System.out.println(new CountUnreachablePairsOfNodesInAnUndirectedGraph().countPairs(7, toIntMatrix("[[0,2],[0,5],[2,4],[1,6],[5,4]]")));
     }
 
 
