@@ -1,5 +1,6 @@
 import leetcode.editor.en.Q1048.LongestStringChain;
 import leetcode.editor.en.Q1217.MinimumCostToMoveChipsToTheSamePosition;
+import leetcode.editor.en.Q1380.LuckyNumbersInAMatrix;
 import leetcode.editor.en.Q1466.ReorderRoutesToMakeAllPathsLeadToTheCityZero;
 import leetcode.editor.en.Q1472.DesignBrowserHistory;
 import leetcode.editor.en.Q1584.MinCostToConnectAllPoints;
@@ -9,6 +10,7 @@ import leetcode.editor.en.Q2243.CalculateDigitSumOfAString;
 import leetcode.editor.en.Q228.SummaryRanges;
 import leetcode.editor.en.Q2316.CountUnreachablePairsOfNodesInAnUndirectedGraph;
 import leetcode.editor.en.Q2348.NumberOfZeroFilledSubarrays;
+import leetcode.editor.en.Q2360.LongestCycleInAGraph;
 import leetcode.editor.en.Q2492.MinimumScoreOfAPathBetweenTwoCities;
 import leetcode.editor.en.Q336.PalindromePairs;
 import leetcode.editor.en.Q605.CanPlaceFlowers;
@@ -27,7 +29,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 //        System.out.println(new LongestStringChain().longestStrChain(toStringArray("[\"xbc\",\"pcxbcf\",\"xb\",\"cxbc\",\"pcxbc\"]\n")));
-        System.out.println(new CountUnreachablePairsOfNodesInAnUndirectedGraph().countPairs(7, toIntMatrix("[[0,2],[0,5],[2,4],[1,6],[5,4]]")));
+        System.out.println(new LuckyNumbersInAMatrix().luckyNumbers(toIntMatrix("[[3,7,8],[9,11,13],[15,16,17]]")));
     }
 
 
