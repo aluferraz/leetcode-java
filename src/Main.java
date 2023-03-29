@@ -1,35 +1,20 @@
-import leetcode.editor.en.Q1048.LongestStringChain;
-import leetcode.editor.en.Q1217.MinimumCostToMoveChipsToTheSamePosition;
-import leetcode.editor.en.Q1380.LuckyNumbersInAMatrix;
-import leetcode.editor.en.Q1466.ReorderRoutesToMakeAllPathsLeadToTheCityZero;
-import leetcode.editor.en.Q1472.DesignBrowserHistory;
-import leetcode.editor.en.Q1584.MinCostToConnectAllPoints;
-import leetcode.editor.en.Q1858.LongestWordWithAllPrefixes;
-import leetcode.editor.en.Q211.DesignAddAndSearchWordsDataStructure;
-import leetcode.editor.en.Q2243.CalculateDigitSumOfAString;
-import leetcode.editor.en.Q228.SummaryRanges;
-import leetcode.editor.en.Q2316.CountUnreachablePairsOfNodesInAnUndirectedGraph;
-import leetcode.editor.en.Q2348.NumberOfZeroFilledSubarrays;
-import leetcode.editor.en.Q2360.LongestCycleInAGraph;
-import leetcode.editor.en.Q2492.MinimumScoreOfAPathBetweenTwoCities;
-import leetcode.editor.en.Q336.PalindromePairs;
-import leetcode.editor.en.Q605.CanPlaceFlowers;
-import leetcode.editor.en.Q721.AccountsMerge;
-import leetcode.editor.en.Q896.MonotonicArray;
+import leetcode.editor.en.Q127.WordLadder;
+import leetcode.editor.en.Q205.IsomorphicStrings;
+import leetcode.editor.en.Q2341.MaximumNumberOfPairsInArray;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 
 public class Main {
     public static void main(String[] args) throws IOException {
-//        System.out.println(new LongestStringChain().longestStrChain(toStringArray("[\"xbc\",\"pcxbcf\",\"xb\",\"cxbc\",\"pcxbc\"]\n")));
-        System.out.println(new LuckyNumbersInAMatrix().luckyNumbers(toIntMatrix("[[3,7,8],[9,11,13],[15,16,17]]")));
+        System.out.println(Arrays.toString(new MaximumNumberOfPairsInArray().numberOfPairs(toIntArray("[1,3,2,1,3,2,2]"))));
     }
 
 
@@ -90,6 +75,15 @@ public class Main {
         return result;
     }
 
+    private static List<String> toStringList(String s) {
+        JSONArray jsonArray = new JSONArray(s);
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < jsonArray.length(); i++) {
+            result.add(jsonArray.getString(i));
+        }
+        return result;
+    }
+
     private static String[][] toStringMatrix(String s) {
         JSONArray jsonArray = new JSONArray(s);
         String[][] result = new String[jsonArray.length()][jsonArray.getJSONArray(0).length()];
@@ -139,6 +133,7 @@ public class Main {
         int[][] result = new int[jsonArray.length()][jsonArray.getJSONArray(0).length()];
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONArray row = jsonArray.getJSONArray(i);
+            result[i] = new int[row.length()];
             for (int j = 0; j < row.length(); j++) {
                 result[i][j] = row.getInt(j);
             }
@@ -157,6 +152,7 @@ public class Main {
         int[][] result = new int[jsonArray.length()][jsonArray.getJSONArray(0).length()];
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONArray row = jsonArray.getJSONArray(i);
+            result[i] = new int[row.length()];
             for (int j = 0; j < row.length(); j++) {
                 result[i][j] = row.getInt(j);
             }
