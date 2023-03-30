@@ -1,4 +1,5 @@
 import leetcode.editor.en.Q127.WordLadder;
+import leetcode.editor.en.Q1402.ReducingDishes;
 import leetcode.editor.en.Q205.IsomorphicStrings;
 import leetcode.editor.en.Q2341.MaximumNumberOfPairsInArray;
 import org.json.JSONArray;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(Arrays.toString(new MaximumNumberOfPairsInArray().numberOfPairs(toIntArray("[1,3,2,1,3,2,2]"))));
+        System.out.println(new ReducingDishes().maxSatisfaction(toIntArray("[-1,-8,1,1,1,1,5,-7]\n")));
     }
 
 
