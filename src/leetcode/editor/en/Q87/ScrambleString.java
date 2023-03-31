@@ -72,29 +72,26 @@ import javafx.util.Pair;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean isScramble(String s1, String s2) {
-        if (s1.length() != s2.length()) return false;
-        return sameChars(s1, s2);
-    }
-
-    private boolean sameChars(String s1, String s2) {
-        if (s1.length() == 1) {
-            return s1.equals(s2);
-        }
-        int[] left = new int[26];
-        int[] right = new int[26];
-
-        left[s1.charAt(0) - 'a']++;
-        right[s1.charAt(0) - 'a']++;
-
-        for (int i = 1; i < s1.length() - 1; i++) {
-            if (Arrays.equals(left, right)) {
-                if (sameChars(s1.substring(i), s2.substring(i))) return true;
+        int n = s1.length();
+        boolean dp[][][] = new boolean[n + 1][n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                dp[1][i][j] = s1.charAt(i) == s2.charAt(j);
             }
-            left[s1.charAt(i) - 'a']++;
-            right[s1.charAt(i) - 'a']++;
         }
-        return false;
-
+        for (int length = 2; length <= n; length++) {
+            for (int i = 0; i < n + 1 - length; i++) {
+                for (int j = 0; j < n + 1 - length; j++) {
+                    for (int newLength = 1; newLength < length; newLength++) {
+                        boolean dp1[] = dp[newLength][i];
+                        boolean dp2[] = dp[length - newLength][i + newLength];
+                        dp[length][i][j] |= dp1[j] && dp2[j + newLength];
+                        dp[length][i][j] |= dp1[j + length - newLength] && dp2[j];
+                    }
+                }
+            }
+        }
+        return dp[n][0][0];
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
