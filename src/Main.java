@@ -1,7 +1,9 @@
 import leetcode.editor.en.Q127.WordLadder;
 import leetcode.editor.en.Q1402.ReducingDishes;
+import leetcode.editor.en.Q1444.NumberOfWaysOfCuttingAPizza;
 import leetcode.editor.en.Q205.IsomorphicStrings;
 import leetcode.editor.en.Q2341.MaximumNumberOfPairsInArray;
+import leetcode.editor.en.Q2591.DistributeMoneyToMaximumChildren;
 import leetcode.editor.en.Q87.ScrambleString;
 import org.json.JSONArray;
 import org.json.JSONTokener;
@@ -16,7 +18,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new ScrambleString().isScramble("abcde","caebd"));
+        System.out.println(new DistributeMoneyToMaximumChildren().distMoney(17, 2));
     }
 
 
