@@ -4,6 +4,8 @@ import leetcode.editor.en.Q1444.NumberOfWaysOfCuttingAPizza;
 import leetcode.editor.en.Q205.IsomorphicStrings;
 import leetcode.editor.en.Q2341.MaximumNumberOfPairsInArray;
 import leetcode.editor.en.Q2591.DistributeMoneyToMaximumChildren;
+import leetcode.editor.en.Q2592.MaximizeGreatnessOfAnArray;
+import leetcode.editor.en.Q2594.MinimumTimeToRepairCars;
 import leetcode.editor.en.Q87.ScrambleString;
 import org.json.JSONArray;
 import org.json.JSONTokener;
@@ -18,7 +20,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new DistributeMoneyToMaximumChildren().distMoney(17, 2));
+        System.out.println(new MinimumTimeToRepairCars().repairCars(toIntArray("[4,2,3,1]\n"), 10));
     }
 
 
