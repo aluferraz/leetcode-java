@@ -1,7 +1,9 @@
 import leetcode.editor.en.Q127.WordLadder;
+import leetcode.editor.en.Q139.WordBreak;
 import leetcode.editor.en.Q1402.ReducingDishes;
 import leetcode.editor.en.Q1444.NumberOfWaysOfCuttingAPizza;
 import leetcode.editor.en.Q205.IsomorphicStrings;
+import leetcode.editor.en.Q2300.SuccessfulPairsOfSpellsAndPotions;
 import leetcode.editor.en.Q2341.MaximumNumberOfPairsInArray;
 import leetcode.editor.en.Q2591.DistributeMoneyToMaximumChildren;
 import leetcode.editor.en.Q2592.MaximizeGreatnessOfAnArray;
@@ -20,7 +22,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new MinimumTimeToRepairCars().repairCars(toIntArray("[4,2,3,1]\n"), 10));
+        System.out.println(new WordBreak().wordBreak("leetcode", toStringList("[\"leet\",\"code\"]")));
     }
 
 
