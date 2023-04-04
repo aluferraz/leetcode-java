@@ -5,10 +5,13 @@ import leetcode.editor.en.Q1444.NumberOfWaysOfCuttingAPizza;
 import leetcode.editor.en.Q205.IsomorphicStrings;
 import leetcode.editor.en.Q2300.SuccessfulPairsOfSpellsAndPotions;
 import leetcode.editor.en.Q2341.MaximumNumberOfPairsInArray;
+import leetcode.editor.en.Q245.ShortestWordDistanceIii;
 import leetcode.editor.en.Q2591.DistributeMoneyToMaximumChildren;
 import leetcode.editor.en.Q2592.MaximizeGreatnessOfAnArray;
 import leetcode.editor.en.Q2594.MinimumTimeToRepairCars;
+import leetcode.editor.en.Q632.SmallestRangeCoveringElementsFromKLists;
 import leetcode.editor.en.Q87.ScrambleString;
+import leetcode.editor.en.Q881.BoatsToSavePeople;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -22,7 +25,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new WordBreak().wordBreak("leetcode", toStringList("[\"leet\",\"code\"]")));
+        System.out.println(new ShortestWordDistanceIii().shortestWordDistance(toStringArray("[\"practice\", \"makes\", \"perfect\", \"coding\", \"makes\"]\n"), "makes", "coding"));
+
     }
 
 
@@ -145,6 +149,20 @@ public class Main {
             for (int j = 0; j < row.length(); j++) {
                 result[i][j] = row.getInt(j);
             }
+        }
+        return result;
+    }
+
+    private static List<List<Integer>> toIntMatrixList(String s) {
+        JSONArray jsonArray = new JSONArray(s);
+        List<List<Integer>> result = new ArrayList<>();
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONArray row = jsonArray.getJSONArray(i);
+            ArrayList<Integer> resultRow = new ArrayList<>();
+            for (int j = 0; j < row.length(); j++) {
+                resultRow.add(row.getInt(j));
+            }
+            result.add(resultRow);
         }
         return result;
     }
