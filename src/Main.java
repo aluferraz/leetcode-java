@@ -1,6 +1,8 @@
+import leetcode.editor.en.Q1254.NumberOfClosedIslands;
 import leetcode.editor.en.Q1560.MostVisitedSectorInACircularTrack;
 import leetcode.editor.en.Q2405.OptimalPartitionOfString;
 import leetcode.editor.en.Q2439.MinimizeMaximumOfArray;
+import leetcode.editor.en.Q300.LongestIncreasingSubsequence;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -13,7 +15,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new MostVisitedSectorInACircularTrack().mostVisited(4, toIntArray("[1,3,1,2]")));
+        System.out.println(new LongestIncreasingSubsequence().lengthOfLIS(toIntArray("[10,9,2,5,3,7,101,18]")));
 
     }
 
