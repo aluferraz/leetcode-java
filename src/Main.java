@@ -3,6 +3,7 @@ import leetcode.editor.en.Q1560.MostVisitedSectorInACircularTrack;
 import leetcode.editor.en.Q2405.OptimalPartitionOfString;
 import leetcode.editor.en.Q2439.MinimizeMaximumOfArray;
 import leetcode.editor.en.Q300.LongestIncreasingSubsequence;
+import leetcode.editor.en.Q32.LongestValidParentheses;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new LongestIncreasingSubsequence().lengthOfLIS(toIntArray("[10,9,2,5,3,7,101,18]")));
+        System.out.println(new LongestValidParentheses().longestValidParentheses("()(()"));
 
     }
 
