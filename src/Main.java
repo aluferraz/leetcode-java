@@ -1,4 +1,6 @@
+import leetcode.editor.en.Q2402.MeetingRoomsIii;
 import leetcode.editor.en.Q2607.MakeKSubarraySumsEqual;
+import leetcode.editor.en.Q71.SimplifyPath;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -11,7 +13,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new MakeKSubarraySumsEqual().makeSubKSumEqual(toIntArray("[1,7,9,6]"), 1));
+        System.out.println(new MeetingRoomsIii().mostBooked(10, toIntMatrixFromFile()));
 
     }
 
