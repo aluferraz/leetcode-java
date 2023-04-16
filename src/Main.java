@@ -1,3 +1,4 @@
+import leetcode.editor.en.Q2218.MaximumValueOfKCoinsFromPiles;
 import leetcode.editor.en.Q2402.MeetingRoomsIii;
 import leetcode.editor.en.Q2607.MakeKSubarraySumsEqual;
 import leetcode.editor.en.Q459.RepeatedSubstringPattern;
@@ -16,7 +17,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new LongestPalindromicSubsequence().longestPalindromeSubseq("lucas"));
+        System.out.println(new MaximumValueOfKCoinsFromPiles().maxValueOfCoins(toIntMatrixList("[[1,100,3],[7,8,9]]\n"), 2));
 
     }
 
