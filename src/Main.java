@@ -1,9 +1,12 @@
+import leetcode.editor.en.Q1548.TheMostSimilarPathInAGraph;
+import leetcode.editor.en.Q1639.NumberOfWaysToFormATargetStringGivenADictionary;
 import leetcode.editor.en.Q2218.MaximumValueOfKCoinsFromPiles;
 import leetcode.editor.en.Q2402.MeetingRoomsIii;
 import leetcode.editor.en.Q2607.MakeKSubarraySumsEqual;
 import leetcode.editor.en.Q459.RepeatedSubstringPattern;
 import leetcode.editor.en.Q516.LongestPalindromicSubsequence;
 import leetcode.editor.en.Q71.SimplifyPath;
+import leetcode.editor.en.Q740.DeleteAndEarn;
 import leetcode.editor.en.Q946.ValidateStackSequences;
 import org.json.JSONArray;
 import org.json.JSONTokener;
@@ -17,7 +20,10 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new MaximumValueOfKCoinsFromPiles().maxValueOfCoins(toIntMatrixList("[[1,100,3],[7,8,9]]\n"), 2));
+        System.out.println(new TheMostSimilarPathInAGraph().mostSimilar(4,
+                toIntMatrix("[[1,0],[2,0],[3,0],[2,1],[3,1],[3,2]]"),
+                toStringArray("[\"ATL\",\"PEK\",\"LAX\",\"DXB\"]\n"),
+                toStringArray("[\"ABC\",\"DEF\",\"GHI\",\"JKL\",\"MNO\",\"PQR\",\"STU\",\"VWX\"]\n")));
 
     }
 
