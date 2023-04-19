@@ -1,4 +1,6 @@
+import leetcode.editor.en.Q152.MaximumProductSubarray;
 import leetcode.editor.en.Q1548.TheMostSimilarPathInAGraph;
+import leetcode.editor.en.Q1567.MaximumLengthOfSubarrayWithPositiveProduct;
 import leetcode.editor.en.Q1639.NumberOfWaysToFormATargetStringGivenADictionary;
 import leetcode.editor.en.Q2218.MaximumValueOfKCoinsFromPiles;
 import leetcode.editor.en.Q2402.MeetingRoomsIii;
@@ -21,7 +23,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new CousinsInBinaryTreeIi().replaceValueInTree());
+        System.out.println(new MaximumLengthOfSubarrayWithPositiveProduct().getMaxLen(toIntArray("[1,2,3,5,-6,4,0,10]\n")));
 
     }
 
