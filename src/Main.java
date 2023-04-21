@@ -9,6 +9,7 @@ import leetcode.editor.en.Q2402.MeetingRoomsIii;
 import leetcode.editor.en.Q2607.MakeKSubarraySumsEqual;
 import leetcode.editor.en.Q2641.CousinsInBinaryTreeIi;
 import leetcode.editor.en.Q459.RepeatedSubstringPattern;
+import leetcode.editor.en.Q461.HammingDistance;
 import leetcode.editor.en.Q516.LongestPalindromicSubsequence;
 import leetcode.editor.en.Q71.SimplifyPath;
 import leetcode.editor.en.Q740.DeleteAndEarn;
@@ -25,7 +26,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new BestTimeToBuyAndSellStockIi().maxProfit(toIntArray("[7,1,5,3,6,4]")));
+        System.out.println(new HammingDistance().hammingDistance(1, 4));
 
     }
 
