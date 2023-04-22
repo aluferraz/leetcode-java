@@ -1,4 +1,5 @@
 import leetcode.editor.en.Q1014.BestSightseeingPair;
+import leetcode.editor.en.Q1051.HeightChecker;
 import leetcode.editor.en.Q122.BestTimeToBuyAndSellStockIi;
 import leetcode.editor.en.Q152.MaximumProductSubarray;
 import leetcode.editor.en.Q1548.TheMostSimilarPathInAGraph;
@@ -13,6 +14,7 @@ import leetcode.editor.en.Q461.HammingDistance;
 import leetcode.editor.en.Q516.LongestPalindromicSubsequence;
 import leetcode.editor.en.Q71.SimplifyPath;
 import leetcode.editor.en.Q740.DeleteAndEarn;
+import leetcode.editor.en.Q879.ProfitableSchemes;
 import leetcode.editor.en.Q946.ValidateStackSequences;
 import org.json.JSONArray;
 import org.json.JSONTokener;
@@ -26,7 +28,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new HammingDistance().hammingDistance(1, 4));
+        System.out.println(new HeightChecker().heightChecker(toIntArray("[1,1,4,2,1,3]")));
 
     }
 
