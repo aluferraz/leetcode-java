@@ -1,6 +1,7 @@
 import leetcode.editor.en.Q1014.BestSightseeingPair;
 import leetcode.editor.en.Q1051.HeightChecker;
 import leetcode.editor.en.Q122.BestTimeToBuyAndSellStockIi;
+import leetcode.editor.en.Q1416.RestoreTheArray;
 import leetcode.editor.en.Q152.MaximumProductSubarray;
 import leetcode.editor.en.Q1548.TheMostSimilarPathInAGraph;
 import leetcode.editor.en.Q1567.MaximumLengthOfSubarrayWithPositiveProduct;
@@ -22,13 +23,15 @@ import org.json.JSONTokener;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new HeightChecker().heightChecker(toIntArray("[1,1,4,2,1,3]")));
+
+        System.out.println(new RestoreTheArray().numberOfArrays("1317", 2000));
 
     }
 
