@@ -13,7 +13,9 @@ import leetcode.editor.en.Q2641.CousinsInBinaryTreeIi;
 import leetcode.editor.en.Q459.RepeatedSubstringPattern;
 import leetcode.editor.en.Q461.HammingDistance;
 import leetcode.editor.en.Q516.LongestPalindromicSubsequence;
+import leetcode.editor.en.Q673.NumberOfLongestIncreasingSubsequence;
 import leetcode.editor.en.Q71.SimplifyPath;
+import leetcode.editor.en.Q727.MinimumWindowSubsequence;
 import leetcode.editor.en.Q740.DeleteAndEarn;
 import leetcode.editor.en.Q879.ProfitableSchemes;
 import leetcode.editor.en.Q946.ValidateStackSequences;
@@ -31,7 +33,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        System.out.println(new RestoreTheArray().numberOfArrays("1317", 2000));
+        System.out.println(new NumberOfLongestIncreasingSubsequence().findNumberOfLIS(toIntArrayFromFile("testcase.txt")));
 
     }
 
