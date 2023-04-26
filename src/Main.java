@@ -13,6 +13,8 @@ import leetcode.editor.en.Q2641.CousinsInBinaryTreeIi;
 import leetcode.editor.en.Q459.RepeatedSubstringPattern;
 import leetcode.editor.en.Q461.HammingDistance;
 import leetcode.editor.en.Q516.LongestPalindromicSubsequence;
+import leetcode.editor.en.Q63.UniquePathsIi;
+import leetcode.editor.en.Q646.MaximumLengthOfPairChain;
 import leetcode.editor.en.Q673.NumberOfLongestIncreasingSubsequence;
 import leetcode.editor.en.Q71.SimplifyPath;
 import leetcode.editor.en.Q727.MinimumWindowSubsequence;
@@ -33,7 +35,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        System.out.println(new NumberOfLongestIncreasingSubsequence().findNumberOfLIS(toIntArrayFromFile("testcase.txt")));
+        System.out.println(new MaximumLengthOfPairChain().findLongestChain(toIntMatrix("[[-6,9],[1,6],[8,10],[-1,4],[-6,-2],[-9,8],[-5,3],[0,3]]")));
 
     }
 
