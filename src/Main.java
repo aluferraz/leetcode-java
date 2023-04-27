@@ -1,5 +1,7 @@
 import leetcode.editor.en.Q1014.BestSightseeingPair;
 import leetcode.editor.en.Q1051.HeightChecker;
+import leetcode.editor.en.Q115.DistinctSubsequences;
+import leetcode.editor.en.Q1218.LongestArithmeticSubsequenceOfGivenDifference;
 import leetcode.editor.en.Q122.BestTimeToBuyAndSellStockIi;
 import leetcode.editor.en.Q1416.RestoreTheArray;
 import leetcode.editor.en.Q152.MaximumProductSubarray;
@@ -35,7 +37,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        System.out.println(new MaximumLengthOfPairChain().findLongestChain(toIntMatrix("[[-6,9],[1,6],[8,10],[-1,4],[-6,-2],[-9,8],[-5,3],[0,3]]")));
+        System.out.println(new LongestArithmeticSubsequenceOfGivenDifference().longestSubsequence(toIntArray("[7,-2,8,10,6,18,9,-8,-5,18,13,-6,-17,-1,-6,-9,9,9]\n"), 1));
 
     }
 
