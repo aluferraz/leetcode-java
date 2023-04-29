@@ -1,35 +1,10 @@
-import leetcode.editor.en.Q1014.BestSightseeingPair;
-import leetcode.editor.en.Q1051.HeightChecker;
-import leetcode.editor.en.Q115.DistinctSubsequences;
-import leetcode.editor.en.Q1218.LongestArithmeticSubsequenceOfGivenDifference;
-import leetcode.editor.en.Q122.BestTimeToBuyAndSellStockIi;
-import leetcode.editor.en.Q1416.RestoreTheArray;
-import leetcode.editor.en.Q152.MaximumProductSubarray;
-import leetcode.editor.en.Q1548.TheMostSimilarPathInAGraph;
-import leetcode.editor.en.Q1567.MaximumLengthOfSubarrayWithPositiveProduct;
-import leetcode.editor.en.Q1639.NumberOfWaysToFormATargetStringGivenADictionary;
-import leetcode.editor.en.Q2218.MaximumValueOfKCoinsFromPiles;
-import leetcode.editor.en.Q2402.MeetingRoomsIii;
-import leetcode.editor.en.Q2607.MakeKSubarraySumsEqual;
-import leetcode.editor.en.Q2641.CousinsInBinaryTreeIi;
-import leetcode.editor.en.Q459.RepeatedSubstringPattern;
-import leetcode.editor.en.Q461.HammingDistance;
-import leetcode.editor.en.Q516.LongestPalindromicSubsequence;
-import leetcode.editor.en.Q63.UniquePathsIi;
-import leetcode.editor.en.Q646.MaximumLengthOfPairChain;
-import leetcode.editor.en.Q673.NumberOfLongestIncreasingSubsequence;
-import leetcode.editor.en.Q71.SimplifyPath;
-import leetcode.editor.en.Q727.MinimumWindowSubsequence;
-import leetcode.editor.en.Q740.DeleteAndEarn;
-import leetcode.editor.en.Q879.ProfitableSchemes;
-import leetcode.editor.en.Q946.ValidateStackSequences;
+import leetcode.editor.en.Q1752.CheckIfArrayIsSortedAndRotated;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -37,7 +12,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        System.out.println(new LongestArithmeticSubsequenceOfGivenDifference().longestSubsequence(toIntArray("[7,-2,8,10,6,18,9,-8,-5,18,13,-6,-17,-1,-6,-9,9,9]\n"), 1));
+        System.out.println(new CheckIfArrayIsSortedAndRotated().check(toIntArray("[3,4,5,1,2]")));
 
     }
 
