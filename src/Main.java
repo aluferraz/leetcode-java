@@ -1,3 +1,4 @@
+import leetcode.editor.en.Q1697.CheckingExistenceOfEdgeLengthLimitedPaths;
 import leetcode.editor.en.Q1752.CheckIfArrayIsSortedAndRotated;
 import org.json.JSONArray;
 import org.json.JSONTokener;
@@ -5,14 +6,14 @@ import org.json.JSONTokener;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 
 public class Main {
     public static void main(String[] args) throws IOException {
-
-        System.out.println(new CheckIfArrayIsSortedAndRotated().check(toIntArray("[3,4,5,1,2]")));
+        System.out.println(new Contest().minimumCost(toIntArray("[1,1]"), toIntArray("[10,8]"), toIntMatrix("[[6,4,9,7,1],[5,2,2,1,3],[3,2,5,5,2]]")));
 
     }
 
