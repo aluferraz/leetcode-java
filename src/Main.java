@@ -1,5 +1,7 @@
 import leetcode.editor.en.Q1697.CheckingExistenceOfEdgeLengthLimitedPaths;
 import leetcode.editor.en.Q1752.CheckIfArrayIsSortedAndRotated;
+import leetcode.editor.en.Q1964.FindTheLongestValidObstacleCourseAtEachPosition;
+import leetcode.editor.en.Q354.RussianDollEnvelopes;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -13,7 +15,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new Contest().minimumCost(toIntArray("[1,1]"), toIntArray("[10,8]"), toIntMatrix("[[6,4,9,7,1],[5,2,2,1,3],[3,2,5,5,2]]")));
+        System.out.println(Arrays.toString(new FindTheLongestValidObstacleCourseAtEachPosition().longestObstacleCourseAtEachPosition(toIntArray("[2,2,1]"))));
 
     }
 
