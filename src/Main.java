@@ -1,5 +1,7 @@
+import leetcode.editor.en.Q1035.UncrossedLines;
 import leetcode.editor.en.Q1697.CheckingExistenceOfEdgeLengthLimitedPaths;
 import leetcode.editor.en.Q1752.CheckIfArrayIsSortedAndRotated;
+import leetcode.editor.en.Q188.BestTimeToBuyAndSellStockIv;
 import leetcode.editor.en.Q1964.FindTheLongestValidObstacleCourseAtEachPosition;
 import leetcode.editor.en.Q354.RussianDollEnvelopes;
 import org.json.JSONArray;
@@ -15,7 +17,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(Arrays.toString(new FindTheLongestValidObstacleCourseAtEachPosition().longestObstacleCourseAtEachPosition(toIntArray("[2,2,1]"))));
+        System.out.println(new BestTimeToBuyAndSellStockIv().maxProfit(2, toIntArray("[3,2,6,5,0,3]")));
 
     }
 
