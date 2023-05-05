@@ -4,6 +4,10 @@ import leetcode.editor.en.Q1752.CheckIfArrayIsSortedAndRotated;
 import leetcode.editor.en.Q188.BestTimeToBuyAndSellStockIv;
 import leetcode.editor.en.Q1964.FindTheLongestValidObstacleCourseAtEachPosition;
 import leetcode.editor.en.Q354.RussianDollEnvelopes;
+import leetcode.editor.en.Q377.CombinationSumIv;
+import leetcode.editor.en.Q474.OnesAndZeroes;
+import leetcode.editor.en.Q518.CoinChangeII;
+import leetcode.editor.en.Q649.Dota2Senate;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -17,7 +21,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new BestTimeToBuyAndSellStockIv().maxProfit(2, toIntArray("[3,2,6,5,0,3]")));
+        System.out.println(new OnesAndZeroes().findMaxForm(toStringArray("[\"10010\",\"10111011\",\"001\",\"110000\",\"101111\",\"1011001001\",\"0111\",\"1\",\"11101001\",\"01110\",\"0000101\",\"110110010\",\"0101\",\"010111100\",\"011000\",\"00100101\",\"0011\",\"00\",\"10011000\",\"00010\",\"010011011\",\"1011\",\"010011010\",\"11110\",\"1\",\"11010\",\"00010000\",\"0101\",\"111010\",\"1100011\",\"001000\",\"11\",\"10011\",\"1111110001\",\"100\",\"1010101111\",\"010\",\"10000\",\"01\"]"), 10, 8));
 
     }
 
