@@ -1,4 +1,5 @@
 import leetcode.editor.en.Q1035.UncrossedLines;
+import leetcode.editor.en.Q1498.NumberOfSubsequencesThatSatisfyTheGivenSumCondition;
 import leetcode.editor.en.Q1697.CheckingExistenceOfEdgeLengthLimitedPaths;
 import leetcode.editor.en.Q1752.CheckIfArrayIsSortedAndRotated;
 import leetcode.editor.en.Q188.BestTimeToBuyAndSellStockIv;
@@ -21,7 +22,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new OnesAndZeroes().findMaxForm(toStringArray("[\"10010\",\"10111011\",\"001\",\"110000\",\"101111\",\"1011001001\",\"0111\",\"1\",\"11101001\",\"01110\",\"0000101\",\"110110010\",\"0101\",\"010111100\",\"011000\",\"00100101\",\"0011\",\"00\",\"10011000\",\"00010\",\"010011011\",\"1011\",\"010011010\",\"11110\",\"1\",\"11010\",\"00010000\",\"0101\",\"111010\",\"1100011\",\"001000\",\"11\",\"10011\",\"1111110001\",\"100\",\"1010101111\",\"010\",\"10000\",\"01\"]"), 10, 8));
+        System.out.println(new NumberOfSubsequencesThatSatisfyTheGivenSumCondition().numSubseq(toIntArray("[3,5,6,7]"), 9));
 
     }
 
