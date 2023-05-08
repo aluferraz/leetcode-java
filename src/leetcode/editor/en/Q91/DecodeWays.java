@@ -69,28 +69,47 @@ import java.util.*;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+    Integer cache[];
+
     public int numDecodings(String s) {
-        if (s.charAt(0) == '0') {
-            return 0;
-        }
+        if (s.charAt(0) == '0'
+                || s.contains("00")
+                || s.contains("30")
+                || s.contains("40")
+                || s.contains("50")
+                || s.contains("60")
+                || s.contains("70")
+                || s.contains("80")
+                || s.contains("90")
+        ) return 0;
 
-        int n = s.length();
-        int twoBack = 1;
-        int oneBack = 1;
-        for (int i = 1; i < n; i++) {
-            int current = 0;
-            if (s.charAt(i) != '0') {
-                current = oneBack;
-            }
-            int twoDigit = Integer.parseInt(s.substring(i - 1, i + 1));
-            if (twoDigit >= 10 && twoDigit <= 26) {
-                current += twoBack;
-            }
+        cache = new Integer[s.length()];
+        return Math.max(decodeWays(s.length() - 1, s), 0);
+    }
 
-            twoBack = oneBack;
-            oneBack = current;
+    private int decodeWays(int i, String s) {
+        if (i < 0) {
+            return 1;
         }
-        return oneBack;
+        if (cache[i] != null) return cache[i];
+
+        int ans = 0;
+        int cur = Character.getNumericValue(s.charAt(i));
+        if (cur == 0) {
+            cache[i] = decodeWays(i - 2, s);
+            return cache[i];
+        }
+        ans += decodeWays(i - 1, s);
+        if (i > 0) {
+            int prev = Character.getNumericValue(s.charAt(i - 1));
+            int comp = (prev * 10) + cur;
+            if (comp >= 10 && comp <= 26) {
+                ans += decodeWays(i - 2, s);
+            }
+        }
+        cache[i] = ans;
+        return ans;
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

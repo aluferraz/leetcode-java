@@ -3,107 +3,63 @@ import javafx.util.Pair;
 
 import java.util.*;
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
 
 class Solution {
 
-    HashSet<Integer> used = new HashSet<>();
-    HashMap<String, TreeNode> trees = new HashMap<>();
+    TreeSet<Integer> indexes = new TreeSet<>();
 
-    public List<TreeNode> generateTrees(int n) {
-        List<TreeNode> ans = new ArrayList<>();
-        for (int i = 1; i <= n; i++) {
-            generateTrees(i, n, ans);
-        }
+    public int[] colorTheArray(int n, int[][] queries) {
+//        TreeMap<Integer, TreeSet<Integer>> timeline = new TreeMap<>();
 
-        return trees.values().stream().toList();
-    }
 
-    public TreeNode generateTrees(int i, int n, List<TreeNode> ans) {
-
-        used.add(i);
-        TreeNode root = new TreeNode(i);
-        for (int j = i - 1; j >= 1; j--) {
-            if (!used.contains(j)) {
-                root.left = generateTrees(j, n, ans);
-                if (used.size() == n) {
-                    appendResult(root);
-
-                }
+        int[] values = new int[n];
+        int[] jumps = new int[n];
+        Arrays.fill(jumps, -1);
+        int[] ans = new int[queries.length];
+        for (int i = 0; i < queries.length; i++) {
+            int index = queries[i][0];
+            int value = queries[i][1];
+//            if (values[index] != 0) {
+//                timeline.get(values[index]).remove(index);
+//            }
+            values[index] = value;
+            jumps[index] = index;
+            if (index + 1 < n && values[index + 1] == value) {
+                jumps[index + 1] = Math.min(index, jumps[index + 1]);
+                jumps[index] = Math.min(index, jumps[index + 1]);
+            }
+            if (index > 0 && values[index - 1] == value) {
+                jumps[index] = Math.min(jumps[index - 1], index);
             }
 
-        }
-        root.left = null;
-        for (int j = i + 1; j >= 1; j++) {
-            if (!used.contains(j)) {
-                root.right = generateTrees(j, n, ans);
-                if (used.size() == n) {
-                    appendResult(root);
 
-                }
+            indexes.add(index);
+            ans[i] = count(jumps, values);
+        }
+
+
+        return ans;
+
+    }
+
+    private int count(int[] jumps, int[] values) {
+
+        int ans = 0;
+        int i = 0;
+        while (i >= 0) {
+            int value = values[i];
+            int start = jumps[i];
+            while (jumps[start] != start && values[start] == value) {
+                start = jumps[start];
             }
-
-        }
-
-
-        for (int j = i - 1; j >= 1; j++) {
-            if (!used.contains(j)) {
-                root.left = generateTrees(j, n, ans);
-                for (int k = i + 1; k <= n; k++) {
-                    if (!used.contains(k)) {
-                        root.right = generateTrees(j, n, ans);
-                        if (used.size() == n) {
-                            appendResult(root);
-                        }
-                    }
-                }
-
+            if (start != i) {
+                ans += i - start;
             }
+            i = start - 1;
         }
-
-
-        used.remove(i);
-        return root;
-
+        return ans;
     }
 
-    private void appendResult(TreeNode root) {
-        trees.put(treeToString(root).toString(), root);
-    }
-
-    private StringBuilder treeToString(TreeNode root) {
-        if (root == null) {
-            return null;
-        }
-        StringBuilder sb = new StringBuilder();
-        sb.append(root.val);
-        if (root.left != null) {
-            sb.append("L:");
-            sb.append(treeToString(root.left));
-        }
-        if (root.right != null) {
-            sb.append("R:");
-            sb.append(treeToString(root.right));
-        }
-        return sb;
-    }
 
 }
 

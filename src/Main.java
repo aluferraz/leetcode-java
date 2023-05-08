@@ -4,11 +4,13 @@ import leetcode.editor.en.Q1697.CheckingExistenceOfEdgeLengthLimitedPaths;
 import leetcode.editor.en.Q1752.CheckIfArrayIsSortedAndRotated;
 import leetcode.editor.en.Q188.BestTimeToBuyAndSellStockIv;
 import leetcode.editor.en.Q1964.FindTheLongestValidObstacleCourseAtEachPosition;
+import leetcode.editor.en.Q2466.CountWaysToBuildGoodStrings;
 import leetcode.editor.en.Q354.RussianDollEnvelopes;
 import leetcode.editor.en.Q377.CombinationSumIv;
 import leetcode.editor.en.Q474.OnesAndZeroes;
 import leetcode.editor.en.Q518.CoinChangeII;
 import leetcode.editor.en.Q649.Dota2Senate;
+import leetcode.editor.en.Q91.DecodeWays;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -22,7 +24,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new NumberOfSubsequencesThatSatisfyTheGivenSumCondition().numSubseq(toIntArray("[3,5,6,7]"), 9));
+        System.out.println(new DecodeWays().numDecodings("230"));
 
     }
 
