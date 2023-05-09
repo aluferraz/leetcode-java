@@ -5,6 +5,7 @@ import leetcode.editor.en.Q1752.CheckIfArrayIsSortedAndRotated;
 import leetcode.editor.en.Q188.BestTimeToBuyAndSellStockIv;
 import leetcode.editor.en.Q1964.FindTheLongestValidObstacleCourseAtEachPosition;
 import leetcode.editor.en.Q2466.CountWaysToBuildGoodStrings;
+import leetcode.editor.en.Q311.SparseMatrixMultiplication;
 import leetcode.editor.en.Q354.RussianDollEnvelopes;
 import leetcode.editor.en.Q377.CombinationSumIv;
 import leetcode.editor.en.Q474.OnesAndZeroes;
@@ -24,7 +25,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new DecodeWays().numDecodings("230"));
+        System.out.println(Arrays.deepToString(new SparseMatrixMultiplication().multiply(toIntMatrix("[[1,-5]]"), toIntMatrix("[[12],[-1]]"))));
 
     }
 
