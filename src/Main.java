@@ -8,11 +8,13 @@ import leetcode.editor.en.Q1964.FindTheLongestValidObstacleCourseAtEachPosition;
 import leetcode.editor.en.Q2466.CountWaysToBuildGoodStrings;
 import leetcode.editor.en.Q311.SparseMatrixMultiplication;
 import leetcode.editor.en.Q354.RussianDollEnvelopes;
+import leetcode.editor.en.Q376.WiggleSubsequence;
 import leetcode.editor.en.Q377.CombinationSumIv;
 import leetcode.editor.en.Q474.OnesAndZeroes;
 import leetcode.editor.en.Q518.CoinChangeII;
 import leetcode.editor.en.Q54.SpiralMatrix;
 import leetcode.editor.en.Q649.Dota2Senate;
+import leetcode.editor.en.Q651.FourKeysKeyboard;
 import leetcode.editor.en.Q91.DecodeWays;
 import org.json.JSONArray;
 import org.json.JSONTokener;
@@ -27,7 +29,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new CountVowelsPermutation().countVowelPermutation(2));
+        System.out.println(new FourKeysKeyboard().maxA(9));
 
     }
 
