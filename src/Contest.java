@@ -1,96 +1,60 @@
-
-import javafx.util.Pair;
-
 import java.util.*;
 
+import java.math.BigInteger;
 
 class Solution {
-
-    TreeSet<Integer> indexes = new TreeSet<>();
-
-    public int[] colorTheArray(int n, int[][] queries) {
-//        TreeMap<Integer, TreeSet<Integer>> timeline = new TreeMap<>();
-
-
-        int[] values = new int[n];
-        int[] jumps = new int[n];
-        Arrays.fill(jumps, -1);
-        int[] ans = new int[queries.length];
-        for (int i = 0; i < queries.length; i++) {
-            int index = queries[i][0];
-            int value = queries[i][1];
-//            if (values[index] != 0) {
-//                timeline.get(values[index]).remove(index);
-//            }
-            values[index] = value;
-            jumps[index] = index;
-            if (index + 1 < n && values[index + 1] == value) {
-                jumps[index + 1] = Math.min(index, jumps[index + 1]);
-                jumps[index] = Math.min(index, jumps[index + 1]);
+    public boolean doesValidArrayExist(int[] derived) {
+        if (derived.length == 1) return derived[0] == 0;
+        int[] original = new int[derived.length];
+        Arrays.fill(original, -1);
+        for (int i = 0; i < derived.length; i++) {
+            if (derived[i] == 0) {
+                original[i] = 0;
+                original[(i + 1) % derived.length] = 0;
             }
-            if (index > 0 && values[index - 1] == value) {
-                jumps[index] = Math.min(jumps[index - 1], index);
-            }
-
-
-            indexes.add(index);
-            ans[i] = count(jumps, values);
         }
-
-
-        return ans;
-
+        return doesValidArrayExistHelper(0, derived, original);
     }
 
-    private int count(int[] jumps, int[] values) {
+    public boolean doesValidArrayExistHelper(int i, int[] derived, int[] original) {
+        if (i == derived.length) return true;
 
-        int ans = 0;
-        int i = 0;
-        while (i >= 0) {
-            int value = values[i];
-            int start = jumps[i];
-            while (jumps[start] != start && values[start] == value) {
-                start = jumps[start];
+        if (derived[i] == 1) {
+            if (original[i] == 0 && original[(i + 1) % derived.length] == 0) return false;
+            if (original[i] == 0) {
+                if (original[(i + 1) % derived.length] == 1) return false;
+                original[(i + 1) % derived.length] = 0;
             }
-            if (start != i) {
-                ans += i - start;
+            int before = (i - 1) < 0 ? derived.length - 1 : i - 1;
+            int after = (i + 1) % derived.length;
+
+
+            if (original[before] == 0 || original[after] == 0) {
+                original[i] = 1;
+                return doesValidArrayExistHelper(i + 1, derived, original);
+            } else {
+//                if (original[before] == -1) {
+//                    original[before] = 0;
+//                    original[i] = 1;
+//                    if (doesValidArrayExistHelper(i + 1, derived, original)) {
+//                        return true;
+//                    }
+//                    original[i] = -1;
+//                    original[before] = -1;
+//                }
+                if (original[after] == -1) {
+                    original[after] = 0;
+                    original[i] = 1;
+                }
             }
-            i = start - 1;
+
+            return doesValidArrayExistHelper(i + 1, derived, original);
+        } else {
+            return doesValidArrayExistHelper(i + 1, derived, original);
         }
-        return ans;
+
     }
-
-
 }
 
 public class Contest extends Solution {
 }
-/**
- * class Node {
- * <p>
- * public Node next = null;
- * int val;
- * <p>
- * Node(int val) {
- * this.val = val;
- * }
- * <p>
- * Node(int val, Node next) {
- * this.val = val;
- * this.next = next;
- * }
- * }
- * <p>
- * class CustomLL {
- * <p>
- * Node head;
- * Node tail;
- * <p>
- * int this.
- * <p>
- * public void add(){
- * <p>
- * }
- * <p>
- * }
- */

@@ -1,8 +1,10 @@
 import leetcode.editor.en.Q1035.UncrossedLines;
 import leetcode.editor.en.Q1220.CountVowelsPermutation;
+import leetcode.editor.en.Q1259.HandshakesThatDontCross;
 import leetcode.editor.en.Q1498.NumberOfSubsequencesThatSatisfyTheGivenSumCondition;
 import leetcode.editor.en.Q1697.CheckingExistenceOfEdgeLengthLimitedPaths;
 import leetcode.editor.en.Q1752.CheckIfArrayIsSortedAndRotated;
+import leetcode.editor.en.Q1799.MaximizeScoreAfterNOperations;
 import leetcode.editor.en.Q188.BestTimeToBuyAndSellStockIv;
 import leetcode.editor.en.Q1964.FindTheLongestValidObstacleCourseAtEachPosition;
 import leetcode.editor.en.Q2466.CountWaysToBuildGoodStrings;
@@ -29,7 +31,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new FourKeysKeyboard().maxA(9));
+
+        System.out.println(new MaximizeScoreAfterNOperations().maxScore(toIntArray("[370435,481435,953948,282360,691237,574616,638525,764832]\n")));
 
     }
 
