@@ -3,6 +3,7 @@ import leetcode.editor.en.Q1220.CountVowelsPermutation;
 import leetcode.editor.en.Q1259.HandshakesThatDontCross;
 import leetcode.editor.en.Q1498.NumberOfSubsequencesThatSatisfyTheGivenSumCondition;
 import leetcode.editor.en.Q1697.CheckingExistenceOfEdgeLengthLimitedPaths;
+import leetcode.editor.en.Q1721.SwappingNodesInALinkedList;
 import leetcode.editor.en.Q1752.CheckIfArrayIsSortedAndRotated;
 import leetcode.editor.en.Q1799.MaximizeScoreAfterNOperations;
 import leetcode.editor.en.Q188.BestTimeToBuyAndSellStockIv;
@@ -15,6 +16,7 @@ import leetcode.editor.en.Q377.CombinationSumIv;
 import leetcode.editor.en.Q474.OnesAndZeroes;
 import leetcode.editor.en.Q518.CoinChangeII;
 import leetcode.editor.en.Q54.SpiralMatrix;
+import leetcode.editor.en.Q639.DecodeWaysIi;
 import leetcode.editor.en.Q649.Dota2Senate;
 import leetcode.editor.en.Q651.FourKeysKeyboard;
 import leetcode.editor.en.Q91.DecodeWays;
@@ -32,7 +34,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        System.out.println(new MaximizeScoreAfterNOperations().maxScore(toIntArray("[370435,481435,953948,282360,691237,574616,638525,764832]\n")));
+        System.out.println(new DecodeWaysIi().numDecodings("********"));
 
     }
 
