@@ -19,6 +19,7 @@ import leetcode.editor.en.Q54.SpiralMatrix;
 import leetcode.editor.en.Q639.DecodeWaysIi;
 import leetcode.editor.en.Q649.Dota2Senate;
 import leetcode.editor.en.Q651.FourKeysKeyboard;
+import leetcode.editor.en.Q785.IsGraphBipartite;
 import leetcode.editor.en.Q91.DecodeWays;
 import org.json.JSONArray;
 import org.json.JSONTokener;
@@ -34,7 +35,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        System.out.println(new DecodeWaysIi().numDecodings("********"));
+        System.out.println(new IsGraphBipartite().isBipartite(toIntMatrix("[[1,2,3],[0,2],[0,1,3],[0,2]]")));
 
     }
 
