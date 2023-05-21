@@ -13,6 +13,7 @@ import leetcode.editor.en.Q311.SparseMatrixMultiplication;
 import leetcode.editor.en.Q354.RussianDollEnvelopes;
 import leetcode.editor.en.Q376.WiggleSubsequence;
 import leetcode.editor.en.Q377.CombinationSumIv;
+import leetcode.editor.en.Q399.EvaluateDivision;
 import leetcode.editor.en.Q474.OnesAndZeroes;
 import leetcode.editor.en.Q518.CoinChangeII;
 import leetcode.editor.en.Q54.SpiralMatrix;
@@ -35,7 +36,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        System.out.println(new IsGraphBipartite().isBipartite(toIntMatrix("[[1,2,3],[0,2],[0,1,3],[0,2]]")));
+        System.out.println(new Contest().modifiedGraphEdges(5, toIntMatrix("[[4,1,-1],[2,0,-1],[0,3,-1],[4,3,-1]]"), 0, 1, 5));
 
     }
 
@@ -77,6 +78,15 @@ public class Main {
             res.add(b);
         }
         return res;
+    }
+
+    private static double[] toDoubleArray(String s) {
+        JSONArray jsonArray = new JSONArray(s);
+        double[] result = new double[jsonArray.length()];
+        for (int i = 0; i < jsonArray.length(); i++) {
+            result[i] = jsonArray.getDouble(i);
+        }
+        return result;
     }
 
     private static boolean[] toBooleanArray(String s) {
