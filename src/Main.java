@@ -22,6 +22,7 @@ import leetcode.editor.en.Q649.Dota2Senate;
 import leetcode.editor.en.Q651.FourKeysKeyboard;
 import leetcode.editor.en.Q785.IsGraphBipartite;
 import leetcode.editor.en.Q91.DecodeWays;
+import leetcode.editor.en.Q934.ShortestBridge;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
@@ -36,7 +37,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        System.out.println(new Contest().modifiedGraphEdges(5, toIntMatrix("[[4,1,-1],[2,0,-1],[0,3,-1],[4,3,-1]]"), 0, 1, 5));
+        System.out.println(new ShortestBridge().shortestBridge(toIntMatrix("[[0,1],[1,0]]")));
 
     }
 
