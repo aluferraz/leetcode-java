@@ -1,6 +1,7 @@
 import leetcode.editor.en.Q1035.UncrossedLines;
 import leetcode.editor.en.Q1220.CountVowelsPermutation;
 import leetcode.editor.en.Q1259.HandshakesThatDontCross;
+import leetcode.editor.en.Q1473.PaintHouseIii;
 import leetcode.editor.en.Q1498.NumberOfSubsequencesThatSatisfyTheGivenSumCondition;
 import leetcode.editor.en.Q1697.CheckingExistenceOfEdgeLengthLimitedPaths;
 import leetcode.editor.en.Q1721.SwappingNodesInALinkedList;
@@ -14,6 +15,7 @@ import leetcode.editor.en.Q354.RussianDollEnvelopes;
 import leetcode.editor.en.Q376.WiggleSubsequence;
 import leetcode.editor.en.Q377.CombinationSumIv;
 import leetcode.editor.en.Q399.EvaluateDivision;
+import leetcode.editor.en.Q403.FrogJump;
 import leetcode.editor.en.Q474.OnesAndZeroes;
 import leetcode.editor.en.Q518.CoinChangeII;
 import leetcode.editor.en.Q54.SpiralMatrix;
@@ -37,7 +39,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        System.out.println(new ShortestBridge().shortestBridge(toIntMatrix("[[0,1],[1,0]]")));
+        System.out.println(new FrogJump().canCross(toIntArray("[0,1,3,6,10,15,19,21,24,26,30,33]\n")));
 
     }
 
