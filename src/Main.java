@@ -22,6 +22,7 @@ import leetcode.editor.en.Q54.SpiralMatrix;
 import leetcode.editor.en.Q639.DecodeWaysIi;
 import leetcode.editor.en.Q649.Dota2Senate;
 import leetcode.editor.en.Q651.FourKeysKeyboard;
+import leetcode.editor.en.Q703.KthLargestElementInAStream;
 import leetcode.editor.en.Q785.IsGraphBipartite;
 import leetcode.editor.en.Q91.DecodeWays;
 import leetcode.editor.en.Q934.ShortestBridge;
@@ -39,7 +40,12 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        System.out.println(new FrogJump().canCross(toIntArray("[0,1,3,6,10,15,19,21,24,26,30,33]\n")));
+        KthLargestElementInAStream kthLargest = new KthLargestElementInAStream(3, new int[]{4, 5, 8, 2});
+        kthLargest.add(3);   // return 4
+        kthLargest.add(5);   // return 5
+        kthLargest.add(10);  // return 5
+        kthLargest.add(9);   // return 8
+        kthLargest.add(4);   // return 8
 
     }
 
