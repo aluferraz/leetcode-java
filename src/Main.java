@@ -10,6 +10,7 @@ import leetcode.editor.en.Q1799.MaximizeScoreAfterNOperations;
 import leetcode.editor.en.Q188.BestTimeToBuyAndSellStockIv;
 import leetcode.editor.en.Q1964.FindTheLongestValidObstacleCourseAtEachPosition;
 import leetcode.editor.en.Q2466.CountWaysToBuildGoodStrings;
+import leetcode.editor.en.Q2542.MaximumSubsequenceScore;
 import leetcode.editor.en.Q311.SparseMatrixMultiplication;
 import leetcode.editor.en.Q354.RussianDollEnvelopes;
 import leetcode.editor.en.Q376.WiggleSubsequence;
@@ -39,13 +40,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-
-        KthLargestElementInAStream kthLargest = new KthLargestElementInAStream(3, new int[]{4, 5, 8, 2});
-        kthLargest.add(3);   // return 4
-        kthLargest.add(5);   // return 5
-        kthLargest.add(10);  // return 5
-        kthLargest.add(9);   // return 8
-        kthLargest.add(4);   // return 8
+        System.out.println(new MaximumSubsequenceScore().maxScore(toIntArray("[23,16,20,7,3]"), toIntArray("[19,21,22,22,12]"), 3));
 
     }
 
