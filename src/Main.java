@@ -1,4 +1,5 @@
 import leetcode.editor.en.Q1035.UncrossedLines;
+import leetcode.editor.en.Q1140.StoneGameIi;
 import leetcode.editor.en.Q1220.CountVowelsPermutation;
 import leetcode.editor.en.Q1259.HandshakesThatDontCross;
 import leetcode.editor.en.Q1473.PaintHouseIii;
@@ -25,6 +26,7 @@ import leetcode.editor.en.Q649.Dota2Senate;
 import leetcode.editor.en.Q651.FourKeysKeyboard;
 import leetcode.editor.en.Q703.KthLargestElementInAStream;
 import leetcode.editor.en.Q785.IsGraphBipartite;
+import leetcode.editor.en.Q837.New21Game;
 import leetcode.editor.en.Q91.DecodeWays;
 import leetcode.editor.en.Q934.ShortestBridge;
 import org.json.JSONArray;
@@ -40,7 +42,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new MaximumSubsequenceScore().maxScore(toIntArray("[23,16,20,7,3]"), toIntArray("[19,21,22,22,12]"), 3));
+        System.out.println(new New21Game().new21Game(185, 183, 2));
+//        System.out.println(new StoneGameIi().stoneGameII(toIntArray("[77,12,64,35,28,4,87,21,20]")));
+
 
     }
 
