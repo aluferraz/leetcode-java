@@ -2,6 +2,7 @@ import leetcode.editor.en.Q1035.UncrossedLines;
 import leetcode.editor.en.Q1140.StoneGameIi;
 import leetcode.editor.en.Q1220.CountVowelsPermutation;
 import leetcode.editor.en.Q1259.HandshakesThatDontCross;
+import leetcode.editor.en.Q1406.StoneGameIii;
 import leetcode.editor.en.Q1473.PaintHouseIii;
 import leetcode.editor.en.Q1498.NumberOfSubsequencesThatSatisfyTheGivenSumCondition;
 import leetcode.editor.en.Q1697.CheckingExistenceOfEdgeLengthLimitedPaths;
@@ -42,8 +43,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new New21Game().new21Game(185, 183, 2));
-//        System.out.println(new StoneGameIi().stoneGameII(toIntArray("[77,12,64,35,28,4,87,21,20]")));
+        System.out.println(new StoneGameIii().stoneGameIII(toIntArray("[1,2,3,6]")));
 
 
     }
