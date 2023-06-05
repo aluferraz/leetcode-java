@@ -43,7 +43,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new StoneGameIii().stoneGameIII(toIntArray("[1,2,3,6]")));
+        System.out.println(new Contest().maxIncreasingCells(toIntMatrix("[[7,6,3],[-7,-5,6],[-7,0,-4],[6,6,0],[-8,6,0]]")));
 
 
     }

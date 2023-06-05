@@ -2,160 +2,140 @@ import javafx.util.Pair;
 
 import java.util.*;
 
-import java.math.BigInteger;
-
 class Solution {
 
-    HashSet<Pair<Integer, Integer>> edgesToReplace = new HashSet<>();
 
-    public int[][] modifiedGraphEdges(int n, int[][] edges, int source, int destination, int target) {
-        HashMap<Integer, HashMap<Integer, Integer>> adjList = makeAdjList(edges);
-        LinkedList<Integer> minimumPath = bfs(n, adjList, source, destination, target);
-        HashSet<Pair<Integer, Integer>> mustReplace = new HashSet<>();
-        replaceMinimumPath(minimumPath, 0, adjList, target, mustReplace);
+    HashMap<Integer, TreeSet<Integer[]>> sortedRowsRight = new HashMap<>();
+    HashMap<Integer, TreeSet<Integer[]>> sortedColsRight = new HashMap<>();
 
-        for (Pair<Integer, Integer> edgeToReplace : edgesToReplace) {
-            int from = edgeToReplace.getKey();
-            int to = edgeToReplace.getValue();
-            Pair<Integer, Integer> pairKey = new Pair<>(Math.min(from, to), Math.max(from, to));
-            if (mustReplace.contains(pairKey)) continue;
-            adjList.get(from).put(to, Integer.MAX_VALUE);
-            adjList.get(to).put(from, Integer.MAX_VALUE);
-        }
-
-        target -= mustReplace.size();
-        if (target < 0) return new int[0][0];
+    HashMap<Integer, TreeSet<Integer[]>> sortedRowsLeft = new HashMap<>();
+    HashMap<Integer, TreeSet<Integer[]>> sortedColsLeft = new HashMap<>();
 
 
-        for (Pair<Integer, Integer> edgeToReplace : mustReplace) {
-            int from = edgeToReplace.getKey();
-            int to = edgeToReplace.getValue();
+    HashSet<Pair<Integer, Integer>> visited = new HashSet<>();
 
-            adjList.get(from).put(to, 1);
-            adjList.get(to).put(from, 1);
+    HashMap<Pair<Integer, Integer>, Integer> cache = new HashMap<>();
 
+    public int maxIncreasingCells(int[][] mat) {
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> {
+            return Integer.compare(a[2], b[2]);
+        });
 
-            int maxAllowed = Integer.MAX_VALUE;
-            int replace = 1;
-            if (target > 0) {
-                HashMap<Integer, Integer> edgesFrom = adjList.get(from);
-                for (Map.Entry<Integer, Integer> kv : edgesFrom.entrySet()) {
-                    if (kv.getValue() == -1 || kv.getKey() == to) continue;
-                    maxAllowed = Math.min(maxAllowed, kv.getValue());
-                }
-                if (maxAllowed >= target + 1) {
-                    replace = target + 1;
-                } else {
-                    replace = maxAllowed;
-                }
-                target -= replace;
-            }
-            adjList.get(from).put(to, replace);
-            adjList.get(to).put(from, replace);
+        HashMap<Integer, int[]> cols = new HashMap<>();
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[i].length; j++) {
+                int[] colArr = cols.getOrDefault(j, new int[mat.length]);
+                colArr[i] = mat[i][j];
+                cols.put(j, colArr);
 
-        }
-        if (target > 0) return new int[0][0];
-        for (int[] edge : edges) {
-            int from = edge[0];
-            int to = edge[1];
-            edge[2] = adjList.get(from).get(to);
-        }
-        return edges;
+                pq.add(new int[]{i, j, mat[i][j]});
 
-    }
-
-    private void replaceMinimumPath(
-            LinkedList<Integer> minimumPath,
-            int i,
-            HashMap<Integer, HashMap<Integer, Integer>> adjList,
-            int target,
-            HashSet<Pair<Integer, Integer>> mustReplace
-    ) {
-        if (i == minimumPath.size() - 1) {
-            return;
-        }
-        int from = minimumPath.get(i);
-        int to = minimumPath.get(i + 1);
-        int cost = adjList.get(from).get(to);
-        if (cost == -1) {
-            mustReplace.add(new Pair<>(Math.min(from, to), Math.max(from, to)));
-        }
-        replaceMinimumPath(minimumPath, i + 1, adjList, target - cost, mustReplace);
-
-    }
-
-    private HashMap<Integer, HashMap<Integer, Integer>> makeAdjList(int[][] edges) {
-        HashMap<Integer, HashMap<Integer, Integer>> adjList = new HashMap<>();
-        for (int[] edge : edges) {
-            int from = edge[0];
-            int to = edge[1];
-            int weight = edge[2];
-            adjList.computeIfAbsent(from, (v) -> new HashMap<>()).put(to, weight);
-            adjList.computeIfAbsent(to, (v) -> new HashMap<>()).put(from, weight);
-            if (weight == -1) {
-                edgesToReplace.add(new Pair<>(Math.min(from, to), Math.max(from, to)));
-            }
-        }
-        return adjList;
-    }
-
-    private LinkedList<Integer> bfs(int n, HashMap<Integer, HashMap<Integer, Integer>> adjList, int source, int destination, int target) {
-        Queue<int[]> q = new LinkedList<>();
-        q.add(new int[]{source, 0});
-        HashMap<Integer, Integer> visited = new HashMap<>();
-        int[] path = new int[n + 1];
-        Arrays.fill(path, -1);
-        visited.put(source, -1);
-
-        boolean found = false;
-        while (!q.isEmpty()) {
-            int size = q.size();
-
-            for (int i = 0; i < size; i++) {
-                int[] info = q.poll();
-                int current = info[0];
-                int cost = info[1];
-                visited.put(current, Math.min(cost, visited.getOrDefault(current, Integer.MAX_VALUE)));
-                if (current == destination) {
-                    found = true;
-                    continue;
-                }
-
-                HashMap<Integer, Integer> connections = adjList.get(current);
-                for (Map.Entry<Integer, Integer> kv : connections.entrySet()) {
-                    int to = kv.getKey();
-                    int weight = kv.getValue();
-                    if (weight == -1) {
-                        weight = 1;
-
+                sortedRowsRight.computeIfAbsent(i, (v) -> new TreeSet<>((a, b) -> {
+                    if (a[1].equals(b[1])) {
+                        return Integer.compare(a[0], b[0]);
                     }
-                    if (visited.getOrDefault(to, Integer.MAX_VALUE) >= cost + weight) {
-                        path[to] = current;
-                        q.add(new int[]{to, cost + weight});
+                    return Integer.compare(a[1], b[1]);
+                })).add(new Integer[]{i, mat[i][j], i, j});
+
+                sortedRowsLeft.computeIfAbsent(i, (v) -> new TreeSet<>((a, b) -> {
+                    if (a[1].equals(b[1])) {
+                        return -Integer.compare(a[0], b[0]);
                     }
-                }
+                    return Integer.compare(a[1], b[1]);
+                })).add(new Integer[]{i, mat[i][j], i, j});
+
+
+                sortedColsRight.computeIfAbsent(j, (v) -> new TreeSet<>((a, b) -> {
+                    if (a[1].equals(b[1])) {
+                        return Integer.compare(a[0], b[0]);
+                    }
+                    return Integer.compare(a[1], b[1]);
+                })).add(new Integer[]{j, mat[i][j], i, j});
+
+                sortedColsLeft.computeIfAbsent(j, (v) -> new TreeSet<>((a, b) -> {
+                    if (a[1].equals(b[1])) {
+                        return -Integer.compare(a[0], b[0]);
+                    }
+                    return Integer.compare(a[1], b[1]);
+                })).add(new Integer[]{j, mat[i][j], i, j});
             }
-            if (found) break;
-
         }
 
-        LinkedList<Integer> pathList = new LinkedList<>();
 
-        getPath(path, destination, pathList);
+        int best = 1;
+        while (!pq.isEmpty()) {
+            int[] info = pq.poll();
+            best = Math.max(best, dfs(info[0], info[1], mat));
+            visited = new HashSet<>();
+        }
 
 
-        return pathList;
+        return best;
+
 
     }
 
-    private void getPath(int[] path, int i, LinkedList<Integer> pathList) {
-        pathList.addFirst(i);
-        if (path[i] == -1) {
-            return;
+
+    private int dfs(Integer i, Integer j, int[][] mat) {
+        if (!isValidIdx(i, j, mat)) return 0;
+        Pair<Integer, Integer> vist = new Pair<>(i, j);
+        if (visited.contains(vist)) return 0;
+        if (cache.containsKey(vist)) return cache.get(vist);
+        visited.add(vist);
+
+
+        int best = 1;
+
+        TreeSet<Integer[]> NGERRow = sortedRowsRight.get(i);
+        TreeSet<Integer[]> NGELRow = sortedRowsLeft.get(i);
+
+        TreeSet<Integer[]> NGERCol = sortedColsRight.get(j);
+        TreeSet<Integer[]> NGELCol = sortedColsLeft.get(j);
+
+        Integer[] nRow = NGERRow.higher(new Integer[]{i, mat[i][j], i, j});
+        while (nRow != null && visited.contains(new Pair<>(nRow[2], nRow[3]))) {
+            nRow = NGERRow.higher(new Integer[]{nRow[2], mat[nRow[2]][nRow[3]], nRow[2], nRow[3]});
         }
-        getPath(path, path[i], pathList);
+        Integer[] nCol = NGERCol.higher(new Integer[]{j, mat[i][j], i, j});
+
+        while (nCol != null && visited.contains(new Pair<>(nCol[2], nCol[3]))) {
+            nCol = NGERCol.higher(new Integer[]{nCol[2], mat[nCol[2]][nCol[3]], nCol[2], nCol[3]});
+        }
+
+        if (nRow != null) {
+            best = Math.max(best, 1 + dfs(nRow[2], nRow[3], mat));
+        }
+        if (nCol != null) {
+            best = Math.max(best, 1 + dfs(nCol[2], nCol[3], mat));
+        }
+
+        nRow = NGELRow.higher(new Integer[]{i, mat[i][j], i, j});
+        while (nRow != null && visited.contains(new Pair<>(nRow[2], nRow[3]))) {
+            nRow = NGELRow.higher(new Integer[]{nRow[2], mat[nRow[2]][nRow[3]], nRow[2], nRow[3]});
+        }
+
+
+        nCol = NGELCol.higher(new Integer[]{j, mat[i][j], i, j});
+
+        while (nCol != null && visited.contains(new Pair<>(nCol[2], nCol[3]))) {
+            nCol = NGELCol.higher(new Integer[]{nCol[2], mat[nCol[2]][nCol[3]], nCol[2], nCol[3]});
+        }
+        if (nRow != null) {
+            best = Math.max(best, 1 + dfs(nRow[2], nRow[3], mat));
+        }
+        if (nCol != null) {
+            best = Math.max(best, 1 + dfs(nCol[2], nCol[3], mat));
+        }
+        visited.remove(vist);
+        cache.put(vist, best);
+        return best;
+
     }
 
+
+    private boolean isValidIdx(int i, int j, int[][] grid) {
+        return i >= 0 && i < grid.length && j >= 0 && j < grid[i].length;
+    }
 
 }
 
